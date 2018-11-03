@@ -84,13 +84,13 @@ EVENTFUNC(affect_event)
 	if (!ch->UpdateAffect())
 		return 0;
 	else
-		return passes_per_sec; // 1ÃÊ
+		return passes_per_sec; // 1ï¿½ï¿½
 }
 
 bool CHARACTER::UpdateAffect()
 {
-	// affect_event ¿¡¼­ Ã³¸®ÇÒ ÀÏÀº ¾Æ´ÏÁö¸¸, 1ÃÊÂ¥¸® ÀÌº¥Æ®¿¡¼­ Ã³¸®ÇÏ´Â °ÍÀÌ
-	// ÀÌ°Í »ÓÀÌ¶ó ¿©±â¼­ ¹°¾à Ã³¸®¸¦ ÇÑ´Ù.
+	// affect_event ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½, 1ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	if (GetPoint(POINT_HP_RECOVERY) > 0)
 	{
 		if (GetMaxHP() <= GetHP())
@@ -146,7 +146,7 @@ bool CHARACTER::UpdateAffect()
 	AutoRecoveryItemProcess( AFFECT_AUTO_HP_RECOVERY );
 	AutoRecoveryItemProcess( AFFECT_AUTO_SP_RECOVERY );
 
-	// ½ºÅ×¹Ì³ª È¸º¹
+	// ï¿½ï¿½ï¿½×¹Ì³ï¿½ È¸ï¿½ï¿½
 	if (GetMaxStamina() > GetStamina())
 	{
 		int iSec = (get_dword_time() - GetStopTime()) / 3000;
@@ -155,7 +155,7 @@ bool CHARACTER::UpdateAffect()
 	}
 
 
-	// ProcessAffect´Â affect°¡ ¾øÀ¸¸é true¸¦ ¸®ÅÏÇÑ´Ù.
+	// ProcessAffectï¿½ï¿½ affectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ trueï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	if (ProcessAffect())
 		if (GetPoint(POINT_HP_RECOVERY) == 0 && GetPoint(POINT_SP_RECOVERY) == 0 && GetStamina() == GetMaxStamina())
 		{
@@ -226,7 +226,7 @@ int CHARACTER::ProcessAffect()
 	CAffect	*pkAff	= NULL;
 
 	//
-	// ÇÁ¸®¹Ì¾ö Ã³¸®
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ Ã³ï¿½ï¿½
 	//
 	for (int i = 0; i <= PREMIUM_MAX_NUM; ++i)
 	{
@@ -300,8 +300,8 @@ int CHARACTER::ProcessAffect()
 		}
 
 		// AFFECT_DURATION_BUG_FIX
-		// ¹«ÇÑ È¿°ú ¾ÆÀÌÅÛµµ ½Ã°£À» ÁÙÀÎ´Ù.
-		// ½Ã°£À» ¸Å¿ì Å©°Ô Àâ±â ¶§¹®¿¡ »ó°ü ¾øÀ» °ÍÀÌ¶ó »ý°¢µÊ.
+		// ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î´ï¿½.
+		// ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Å¿ï¿½ Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 		if ( --pkAff->lDuration <= 0 )
 		{
 			bEnd = true;
@@ -472,7 +472,7 @@ void CHARACTER::LoadAffect(DWORD dwCount, TPacketAffectElement * pElements)
 
 	for (DWORD i = 0; i < dwCount; ++i, ++pElements)
 	{
-		// ¹«¿µÁøÀº ·ÎµåÇÏÁö¾Ê´Â´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê´Â´ï¿½.
 		if (pElements->dwType == SKILL_MUYEONG)
 			continue;
 
@@ -529,7 +529,7 @@ void CHARACTER::LoadAffect(DWORD dwCount, TPacketAffectElement * pElements)
 
 	m_bIsLoadedAffect = true;
 
-	// ¿ëÈ¥¼® ¼ÂÆÃ ·Îµå ¹× ÃÊ±âÈ­
+	// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½È­
 	DragonSoul_Initialize();
 }
 
@@ -538,7 +538,7 @@ bool CHARACTER::AddAffect(DWORD dwType, BYTE bApplyOn, long lApplyValue, DWORD d
 	// CHAT_BLOCK
 	if (dwType == AFFECT_BLOCK_CHAT && lDuration > 1)
 	{
-		ChatPacket(CHAT_TYPE_INFO, LC_TEXT("¿î¿µÀÚ Á¦Á¦·Î Ã¤ÆÃÀÌ ±ÝÁö µÇ¾ú½À´Ï´Ù."));
+		ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½î¿µï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."));
 	}
 	// END_OF_CHAT_BLOCK
 
@@ -567,10 +567,10 @@ bool CHARACTER::AddAffect(DWORD dwType, BYTE bApplyOn, long lApplyValue, DWORD d
 		}
 	}
 
-	// ÀÌ¹Ì ÀÖ´Â È¿°ú¸¦ µ¤¾î ¾²´Â Ã³¸®
+	// ï¿½Ì¹ï¿½ ï¿½Ö´ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 	if (pkAff && bOverride)
 	{
-		ComputeAffect(pkAff, false); // ÀÏ´Ü È¿°ú¸¦ »èÁ¦ÇÏ°í
+		ComputeAffect(pkAff, false); // ï¿½Ï´ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½
 
 		if (GetDesc())
 			SendAffectRemovePacket(GetDesc(), GetPlayerID(), pkAff->dwType, pkAff->bApplyOn);
@@ -578,9 +578,9 @@ bool CHARACTER::AddAffect(DWORD dwType, BYTE bApplyOn, long lApplyValue, DWORD d
 	else
 	{
 		//
-		// »õ ¿¡Æå¸¦ Ãß°¡
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½å¸¦ ï¿½ß°ï¿½
 		//
-		// NOTE: µû¶ó¼­ °°Àº type À¸·Îµµ ¿©·¯ ¿¡ÆåÆ®¸¦ ºÙÀ» ¼ö ÀÖ´Ù.
+		// NOTE: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ type ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 		// 
 		pkAff = CAffect::Acquire();
 		m_list_pkAffect.push_back(pkAff);
@@ -683,19 +683,19 @@ bool CHARACTER::RemoveAffect(CAffect * pkAff)
 
 	ComputeAffect(pkAff, false);
 
-	// ¹é±â ¹ö±× ¼öÁ¤.
-	// ¹é±â ¹ö±×´Â ¹öÇÁ ½ºÅ³ ½ÃÀü->µÐ°©->¹é±â »ç¿ë(AFFECT_REVIVE_INVISIBLE) ÈÄ ¹Ù·Î °ø°Ý ÇÒ °æ¿ì¿¡ ¹ß»ýÇÑ´Ù.
-	// ¿øÀÎÀº µÐ°©À» ½ÃÀüÇÏ´Â ½ÃÁ¡¿¡, ¹öÇÁ ½ºÅ³ È¿°ú¸¦ ¹«½ÃÇÏ°í µÐ°© È¿°ú¸¸ Àû¿ëµÇ°Ô µÇ¾îÀÖ´Âµ¥,
-	// ¹é±â »ç¿ë ÈÄ ¹Ù·Î °ø°ÝÇÏ¸é RemoveAffect°¡ ºÒ¸®°Ô µÇ°í, ComputePointsÇÏ¸é¼­ µÐ°© È¿°ú + ¹öÇÁ ½ºÅ³ È¿°ú°¡ µÈ´Ù.
-	// ComputePoints¿¡¼­ µÐ°© »óÅÂ¸é ¹öÇÁ ½ºÅ³ È¿°ú ¾È ¸ÔÈ÷µµ·Ï ÇÏ¸é µÇ±ä ÇÏ´Âµ¥,
-	// ComputePoints´Â ±¤¹üÀ§ÇÏ°Ô »ç¿ëµÇ°í ÀÖ¾î¼­ Å« º¯È­¸¦ ÁÖ´Â °ÍÀÌ ²¨·ÁÁø´Ù.(¾î¶² side effect°¡ ¹ß»ýÇÒÁö ¾Ë±â Èûµé´Ù.)
-	// µû¶ó¼­ AFFECT_REVIVE_INVISIBLE°¡ RemoveAffect·Î »èÁ¦µÇ´Â °æ¿ì¸¸ ¼öÁ¤ÇÑ´Ù.
-	// ½Ã°£ÀÌ ´Ù µÇ¾î ¹é±â È¿°ú°¡ Ç®¸®´Â °æ¿ì´Â ¹ö±×°¡ ¹ß»ýÇÏÁö ¾ÊÀ¸¹Ç·Î ±×¿Í ¶È°°ÀÌ ÇÔ.
-	//		(ProcessAffect¸¦ º¸¸é ½Ã°£ÀÌ ´Ù µÇ¾î¼­ Affect°¡ »èÁ¦µÇ´Â °æ¿ì, ComputePoints¸¦ ºÎ¸£Áö ¾Ê´Â´Ù.)
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½->ï¿½Ð°ï¿½->ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(AFFECT_REVIVE_INVISIBLE) ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ì¿¡ ï¿½ß»ï¿½ï¿½Ñ´ï¿½.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ð°ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½Ç¾ï¿½ï¿½Ö´Âµï¿½,
+	// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ RemoveAffectï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½ ï¿½Ç°ï¿½, ComputePointsï¿½Ï¸é¼­ ï¿½Ð°ï¿½ È¿ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½È´ï¿½.
+	// ComputePointsï¿½ï¿½ï¿½ï¿½ ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ È¿ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ ï¿½Ç±ï¿½ ï¿½Ï´Âµï¿½,
+	// ComputePointsï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Ç°ï¿½ ï¿½Ö¾î¼­ Å« ï¿½ï¿½È­ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.(ï¿½î¶² side effectï¿½ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.)
+	// ï¿½ï¿½ï¿½ï¿½ AFFECT_REVIVE_INVISIBLEï¿½ï¿½ RemoveAffectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ì¸¸ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
+	// ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½×°ï¿½ ï¿½ß»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½×¿ï¿½ ï¿½È°ï¿½ï¿½ï¿½ ï¿½ï¿½.
+	//		(ProcessAffectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ç¾î¼­ Affectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½, ComputePointsï¿½ï¿½ ï¿½Î¸ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.)
 	if (AFFECT_REVIVE_INVISIBLE != pkAff->dwType)
-	{
 		ComputePoints();
-	}
+	else
+		UpdatePacket();
 	CheckMaximumPoints();
 
 	if (test_server)
@@ -715,7 +715,7 @@ bool CHARACTER::RemoveAffect(DWORD dwType)
 	// CHAT_BLOCK
 	if (dwType == AFFECT_BLOCK_CHAT)
 	{
-		ChatPacket(CHAT_TYPE_INFO, LC_TEXT("Ã¤ÆÃ ±ÝÁö°¡ Ç®·È½À´Ï´Ù."));
+		ChatPacket(CHAT_TYPE_INFO, LC_TEXT("Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½È½ï¿½ï¿½Ï´ï¿½."));
 	}
 	// END_OF_CHAT_BLOCK
 
@@ -797,41 +797,41 @@ bool CHARACTER::IsGoodAffect(BYTE bAffectType) const
 void CHARACTER::RemoveBadAffect()
 {
 	sys_log(0, "RemoveBadAffect %s", GetName());
-	// µ¶
+	// ï¿½ï¿½
 	RemovePoison();
 	RemoveFire();
 
-	// ½ºÅÏ           : Value%·Î »ó´ë¹æÀ» 5ÃÊ°£ ¸Ó¸® À§¿¡ º°ÀÌ µ¹¾Æ°£´Ù. (¶§¸®¸é 1/2 È®·ü·Î Ç®¸²)               AFF_STUN
+	// ï¿½ï¿½ï¿½ï¿½           : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 5ï¿½Ê°ï¿½ ï¿½Ó¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½. (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1/2 È®ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½)               AFF_STUN
 	RemoveAffect(AFFECT_STUN);
 
-	// ½½·Î¿ì         : Value%·Î »ó´ë¹æÀÇ °ø¼Ó/ÀÌ¼Ó ¸ðµÎ ´À·ÁÁø´Ù. ¼ö·Ãµµ¿¡ µû¶ó ´Þ¶óÁü ±â¼ú·Î »ç¿ë ÇÑ °æ¿ì¿¡   AFF_SLOW
+	// ï¿½ï¿½ï¿½Î¿ï¿½         : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ì¿¡   AFF_SLOW
 	RemoveAffect(AFFECT_SLOW);
 
-	// Åõ¼Ó¸¶·É
+	// ï¿½ï¿½ï¿½Ó¸ï¿½ï¿½ï¿½
 	RemoveAffect(SKILL_TUSOK);
 
-	// ÀúÁÖ
+	// ï¿½ï¿½ï¿½ï¿½
 	//RemoveAffect(SKILL_CURSE);
 
-	// ÆÄ¹ý¼ú
+	// ï¿½Ä¹ï¿½ï¿½ï¿½
 	//RemoveAffect(SKILL_PABUP);
 
-	// ±âÀý           : Value%·Î »ó´ë¹æÀ» ±âÀý½ÃÅ²´Ù. 2ÃÊ                                                       AFF_FAINT
+	// ï¿½ï¿½ï¿½ï¿½           : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½. 2ï¿½ï¿½                                                       AFF_FAINT
 	//RemoveAffect(AFFECT_FAINT);
 
-	// ´Ù¸®¹­ÀÓ       : Value%·Î »ó´ë¹æÀÇ ÀÌµ¿¼Óµµ¸¦ ¶³¾îÆ®¸°´Ù. 5ÃÊ°£ -40                                      AFF_WEB
+	// ï¿½Ù¸ï¿½ï¿½ï¿½ï¿½ï¿½       : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½. 5ï¿½Ê°ï¿½ -40                                      AFF_WEB
 	//RemoveAffect(AFFECT_WEB);
 
-	// Àáµé±â         : Value%·Î »ó´ë¹æÀ» 10ÃÊ°£ ÀáÀç¿î´Ù. (¶§¸®¸é Ç®¸²)                                        AFF_SLEEP
+	// ï¿½ï¿½ï¿½ï¿½         : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç®ï¿½ï¿½)                                        AFF_SLEEP
 	//RemoveAffect(AFFECT_SLEEP);
 
-	// ÀúÁÖ           : Value%·Î »ó´ë¹æÀÇ °øµî/¹æµî ¸ðµÎ ¶³¾îÆ®¸°´Ù. ¼ö·Ãµµ¿¡ µû¶ó ´Þ¶óÁü ±â¼ú·Î »ç¿ë ÇÑ °æ¿ì¿¡ AFF_CURSE
+	// ï¿½ï¿½ï¿½ï¿½           : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ì¿¡ AFF_CURSE
 	//RemoveAffect(AFFECT_CURSE);
 
-	// ¸¶ºñ           : Value%·Î »ó´ë¹æÀ» 4ÃÊ°£ ¸¶ºñ½ÃÅ²´Ù.                                                     AFF_PARA
+	// ï¿½ï¿½ï¿½ï¿½           : Value%ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½.                                                     AFF_PARA
 	//RemoveAffect(AFFECT_PARALYZE);
 
-	// ºÎµ¿¹ÚºÎ       : ¹«´ç ±â¼ú
+	// ï¿½Îµï¿½ï¿½Úºï¿½       : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	//RemoveAffect(SKILL_BUDONG);
 }
 

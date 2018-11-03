@@ -83,7 +83,7 @@ enum EDamageType
 	DAMAGE_TYPE_NONE,
 	DAMAGE_TYPE_NORMAL,
 	DAMAGE_TYPE_NORMAL_RANGE,
-	//½ºÅ³
+	//ï¿½ï¿½Å³
 	DAMAGE_TYPE_MELEE,
 	DAMAGE_TYPE_RANGE,
 	DAMAGE_TYPE_FIRE,
@@ -105,103 +105,103 @@ enum EPointTypes
 	POINT_MAX_HP,               // 6
 	POINT_SP,                   // 7
 	POINT_MAX_SP,               // 8  
-	POINT_STAMINA,              // 9  ½ºÅ×¹Ì³Ê
-	POINT_MAX_STAMINA,          // 10 ÃÖ´ë ½ºÅ×¹Ì³Ê
+	POINT_STAMINA,              // 9  ï¿½ï¿½ï¿½×¹Ì³ï¿½
+	POINT_MAX_STAMINA,          // 10 ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½×¹Ì³ï¿½
 
 	POINT_GOLD,                 // 11
-	POINT_ST,                   // 12 ±Ù·Â
-	POINT_HT,                   // 13 Ã¼·Â
-	POINT_DX,                   // 14 ¹ÎÃ¸¼º
-	POINT_IQ,                   // 15 Á¤½Å·Â
+	POINT_ST,                   // 12 ï¿½Ù·ï¿½
+	POINT_HT,                   // 13 Ã¼ï¿½ï¿½
+	POINT_DX,                   // 14 ï¿½ï¿½Ã¸ï¿½ï¿½
+	POINT_IQ,                   // 15 ï¿½ï¿½ï¿½Å·ï¿½
 	POINT_DEF_GRADE,		// 16 ...
-	POINT_ATT_SPEED,            // 17 °ø°Ý¼Óµµ
-	POINT_ATT_GRADE,		// 18 °ø°Ý·Â MAX
-	POINT_MOV_SPEED,            // 19 ÀÌµ¿¼Óµµ
-	POINT_CLIENT_DEF_GRADE,	// 20 ¹æ¾îµî±Þ
-	POINT_CASTING_SPEED,        // 21 ÁÖ¹®¼Óµµ (Äð´Ù¿îÅ¸ÀÓ*100) / (100 + ÀÌ°ª) = ÃÖÁ¾ Äð´Ù¿î Å¸ÀÓ
-	POINT_MAGIC_ATT_GRADE,      // 22 ¸¶¹ý°ø°Ý·Â
-	POINT_MAGIC_DEF_GRADE,      // 23 ¸¶¹ý¹æ¾î·Â
-	POINT_EMPIRE_POINT,         // 24 Á¦±¹Á¡¼ö
-	POINT_LEVEL_STEP,           // 25 ÇÑ ·¹º§¿¡¼­ÀÇ ´Ü°è.. (1 2 3 µÉ ¶§ º¸»ó, 4 µÇ¸é ·¹º§ ¾÷)
-	POINT_STAT,                 // 26 ´É·ÂÄ¡ ¿Ã¸± ¼ö ÀÖ´Â °³¼ö
-	POINT_SUB_SKILL,		// 27 º¸Á¶ ½ºÅ³ Æ÷ÀÎÆ®
-	POINT_SKILL,		// 28 ¾×Æ¼ºê ½ºÅ³ Æ÷ÀÎÆ®
-	POINT_WEAPON_MIN,		// 29 ¹«±â ÃÖ¼Ò µ¥¹ÌÁö
-	POINT_WEAPON_MAX,		// 30 ¹«±â ÃÖ´ë µ¥¹ÌÁö
-	POINT_PLAYTIME,             // 31 ÇÃ·¹ÀÌ½Ã°£
-	POINT_HP_REGEN,             // 32 HP È¸º¹·ü
-	POINT_SP_REGEN,             // 33 SP È¸º¹·ü
+	POINT_ATT_SPEED,            // 17 ï¿½ï¿½ï¿½Ý¼Óµï¿½
+	POINT_ATT_GRADE,		// 18 ï¿½ï¿½ï¿½Ý·ï¿½ MAX
+	POINT_MOV_SPEED,            // 19 ï¿½Ìµï¿½ï¿½Óµï¿½
+	POINT_CLIENT_DEF_GRADE,	// 20 ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_CASTING_SPEED,        // 21 ï¿½Ö¹ï¿½ï¿½Óµï¿½ (ï¿½ï¿½Ù¿ï¿½Å¸ï¿½ï¿½*100) / (100 + ï¿½Ì°ï¿½) = ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ù¿ï¿½ Å¸ï¿½ï¿½
+	POINT_MAGIC_ATT_GRADE,      // 22 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý·ï¿½
+	POINT_MAGIC_DEF_GRADE,      // 23 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_EMPIRE_POINT,         // 24 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_LEVEL_STEP,           // 25 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ü°ï¿½.. (1 2 3 ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, 4 ï¿½Ç¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
+	POINT_STAT,                 // 26 ï¿½É·ï¿½Ä¡ ï¿½Ã¸ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_SUB_SKILL,		// 27 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½Æ®
+	POINT_SKILL,		// 28 ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½Æ®
+	POINT_WEAPON_MIN,		// 29 ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_WEAPON_MAX,		// 30 ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_PLAYTIME,             // 31 ï¿½Ã·ï¿½ï¿½Ì½Ã°ï¿½
+	POINT_HP_REGEN,             // 32 HP È¸ï¿½ï¿½ï¿½ï¿½
+	POINT_SP_REGEN,             // 33 SP È¸ï¿½ï¿½ï¿½ï¿½
 
-	POINT_BOW_DISTANCE,         // 34 È° »çÁ¤°Å¸® Áõ°¡Ä¡ (meter)
+	POINT_BOW_DISTANCE,         // 34 È° ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ (meter)
 
-	POINT_HP_RECOVERY,          // 35 Ã¼·Â È¸º¹ Áõ°¡·®
-	POINT_SP_RECOVERY,          // 36 Á¤½Å·Â È¸º¹ Áõ°¡·®
+	POINT_HP_RECOVERY,          // 35 Ã¼ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_SP_RECOVERY,          // 36 ï¿½ï¿½ï¿½Å·ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	POINT_POISON_PCT,           // 37 µ¶ È®·ü
-	POINT_STUN_PCT,             // 38 ±âÀý È®·ü
-	POINT_SLOW_PCT,             // 39 ½½·Î¿ì È®·ü
-	POINT_CRITICAL_PCT,         // 40 Å©¸®Æ¼ÄÃ È®·ü
-	POINT_PENETRATE_PCT,        // 41 °üÅëÅ¸°Ý È®·ü
-	POINT_CURSE_PCT,            // 42 ÀúÁÖ È®·ü
+	POINT_POISON_PCT,           // 37 ï¿½ï¿½ È®ï¿½ï¿½
+	POINT_STUN_PCT,             // 38 ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+	POINT_SLOW_PCT,             // 39 ï¿½ï¿½ï¿½Î¿ï¿½ È®ï¿½ï¿½
+	POINT_CRITICAL_PCT,         // 40 Å©ï¿½ï¿½Æ¼ï¿½ï¿½ È®ï¿½ï¿½
+	POINT_PENETRATE_PCT,        // 41 ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ È®ï¿½ï¿½
+	POINT_CURSE_PCT,            // 42 ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
-	POINT_ATTBONUS_HUMAN,       // 43 ÀÎ°£¿¡°Ô °­ÇÔ
-	POINT_ATTBONUS_ANIMAL,      // 44 µ¿¹°¿¡°Ô µ¥¹ÌÁö % Áõ°¡
-	POINT_ATTBONUS_ORC,         // 45 ¿õ±Í¿¡°Ô µ¥¹ÌÁö % Áõ°¡
-	POINT_ATTBONUS_MILGYO,      // 46 ¹Ð±³¿¡°Ô µ¥¹ÌÁö % Áõ°¡
-	POINT_ATTBONUS_UNDEAD,      // 47 ½ÃÃ¼¿¡°Ô µ¥¹ÌÁö % Áõ°¡
-	POINT_ATTBONUS_DEVIL,       // 48 ¸¶±Í(¾Ç¸¶)¿¡°Ô µ¥¹ÌÁö % Áõ°¡
-	POINT_ATTBONUS_INSECT,      // 49 ¹ú·¹Á·
-	POINT_ATTBONUS_FIRE,        // 50 È­¿°Á·
-	POINT_ATTBONUS_ICE,         // 51 ºù¼³Á·
-	POINT_ATTBONUS_DESERT,      // 52 »ç¸·Á·
-	POINT_ATTBONUS_MONSTER,     // 53 ¸ðµç ¸ó½ºÅÍ¿¡°Ô °­ÇÔ
-	POINT_ATTBONUS_WARRIOR,     // 54 ¹«»ç¿¡°Ô °­ÇÔ
-	POINT_ATTBONUS_ASSASSIN,	// 55 ÀÚ°´¿¡°Ô °­ÇÔ
-	POINT_ATTBONUS_SURA,		// 56 ¼ö¶ó¿¡°Ô °­ÇÔ
-	POINT_ATTBONUS_SHAMAN,		// 57 ¹«´ç¿¡°Ô °­ÇÔ
-	POINT_ATTBONUS_TREE,     	// 58 ³ª¹«¿¡°Ô °­ÇÔ 20050729.myevan UNUSED5 
+	POINT_ATTBONUS_HUMAN,       // 43 ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_ANIMAL,      // 44 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ % ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_ORC,         // 45 ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ % ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_MILGYO,      // 46 ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ % ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_UNDEAD,      // 47 ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ % ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_DEVIL,       // 48 ï¿½ï¿½ï¿½ï¿½(ï¿½Ç¸ï¿½)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ % ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_INSECT,      // 49 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_FIRE,        // 50 È­ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_ICE,         // 51 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_DESERT,      // 52 ï¿½ç¸·ï¿½ï¿½
+	POINT_ATTBONUS_MONSTER,     // 53 ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_WARRIOR,     // 54 ï¿½ï¿½ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_ASSASSIN,	// 55 ï¿½Ú°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_SURA,		// 56 ï¿½ï¿½ï¿½ó¿¡°ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_SHAMAN,		// 57 ï¿½ï¿½ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_ATTBONUS_TREE,     	// 58 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 20050729.myevan UNUSED5 
 
-	POINT_RESIST_WARRIOR,		// 59 ¹«»ç¿¡°Ô ÀúÇ×
-	POINT_RESIST_ASSASSIN,		// 60 ÀÚ°´¿¡°Ô ÀúÇ×
-	POINT_RESIST_SURA,			// 61 ¼ö¶ó¿¡°Ô ÀúÇ×
-	POINT_RESIST_SHAMAN,		// 62 ¹«´ç¿¡°Ô ÀúÇ×
+	POINT_RESIST_WARRIOR,		// 59 ï¿½ï¿½ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_ASSASSIN,		// 60 ï¿½Ú°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_SURA,			// 61 ï¿½ï¿½ï¿½ó¿¡°ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_SHAMAN,		// 62 ï¿½ï¿½ï¿½ç¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	POINT_STEAL_HP,             // 63 »ý¸í·Â Èí¼ö
-	POINT_STEAL_SP,             // 64 Á¤½Å·Â Èí¼ö
+	POINT_STEAL_HP,             // 63 ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+	POINT_STEAL_SP,             // 64 ï¿½ï¿½ï¿½Å·ï¿½ ï¿½ï¿½ï¿½
 
-	POINT_MANA_BURN_PCT,        // 65 ¸¶³ª ¹ø
+	POINT_MANA_BURN_PCT,        // 65 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 
-	/// ÇÇÇØ½Ã º¸³Ê½º ///
+	/// ï¿½ï¿½ï¿½Ø½ï¿½ ï¿½ï¿½ï¿½Ê½ï¿½ ///
 
-	POINT_DAMAGE_SP_RECOVER,    // 66 °ø°Ý´çÇÒ ½Ã Á¤½Å·Â È¸º¹ È®·ü
+	POINT_DAMAGE_SP_RECOVER,    // 66 ï¿½ï¿½ï¿½Ý´ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Å·ï¿½ È¸ï¿½ï¿½ È®ï¿½ï¿½
 
-	POINT_BLOCK,                // 67 ºí·°À²
-	POINT_DODGE,                // 68 È¸ÇÇÀ²
+	POINT_BLOCK,                // 67 ï¿½ï¿½ï¿½ï¿½
+	POINT_DODGE,                // 68 È¸ï¿½ï¿½ï¿½ï¿½
 
 	POINT_RESIST_SWORD,         // 69
 	POINT_RESIST_TWOHAND,       // 70
 	POINT_RESIST_DAGGER,        // 71
 	POINT_RESIST_BELL,          // 72
 	POINT_RESIST_FAN,           // 73
-	POINT_RESIST_BOW,           // 74  È­»ì   ÀúÇ×   : ´ë¹ÌÁö °¨¼Ò
-	POINT_RESIST_FIRE,          // 75  È­¿°   ÀúÇ×   : È­¿°°ø°Ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
-	POINT_RESIST_ELEC,          // 76  Àü±â   ÀúÇ×   : Àü±â°ø°Ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
-	POINT_RESIST_MAGIC,         // 77  ¼ú¹ý   ÀúÇ×   : ¸ðµç¼ú¹ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
-	POINT_RESIST_WIND,          // 78  ¹Ù¶÷   ÀúÇ×   : ¹Ù¶÷°ø°Ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
+	POINT_RESIST_BOW,           // 74  È­ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_FIRE,          // 75  È­ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½   : È­ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_ELEC,          // 76  ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_MAGIC,         // 77  ï¿½ï¿½ï¿½ï¿½   ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_WIND,          // 78  ï¿½Ù¶ï¿½   ï¿½ï¿½ï¿½ï¿½   : ï¿½Ù¶ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	POINT_REFLECT_MELEE,        // 79 °ø°Ý ¹Ý»ç
+	POINT_REFLECT_MELEE,        // 79 ï¿½ï¿½ï¿½ï¿½ ï¿½Ý»ï¿½
 
-	/// Æ¯¼ö ÇÇÇØ½Ã ///
-	POINT_REFLECT_CURSE,		// 80 ÀúÁÖ ¹Ý»ç
-	POINT_POISON_REDUCE,		// 81 µ¶µ¥¹ÌÁö °¨¼Ò
+	/// Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½Ø½ï¿½ ///
+	POINT_REFLECT_CURSE,		// 80 ï¿½ï¿½ï¿½ï¿½ ï¿½Ý»ï¿½
+	POINT_POISON_REDUCE,		// 81 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	/// Àû ¼Ò¸ê½Ã ///
-	POINT_KILL_SP_RECOVER,		// 82 Àû ¼Ò¸ê½Ã MP È¸º¹
+	/// ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ ///
+	POINT_KILL_SP_RECOVER,		// 82 ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ MP È¸ï¿½ï¿½
 	POINT_EXP_DOUBLE_BONUS,		// 83
 	POINT_GOLD_DOUBLE_BONUS,		// 84
 	POINT_ITEM_DROP_BONUS,		// 85
 
-	/// È¸º¹ °ü·Ã ///
+	/// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ///
 	POINT_POTION_BONUS,			// 86
 	POINT_KILL_HP_RECOVERY,		// 87
 
@@ -225,7 +225,7 @@ enum EPointTypes
 
 	POINT_HIT_HP_RECOVERY,		// 100
 	POINT_HIT_SP_RECOVERY, 		// 101
-	POINT_MANASHIELD,			// 102 Èæ½Å¼öÈ£ ½ºÅ³¿¡ ÀÇÇÑ ¸¶³ª½¯µå È¿°ú Á¤µµ
+	POINT_MANASHIELD,			// 102 ï¿½ï¿½Å¼ï¿½È£ ï¿½ï¿½Å³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	POINT_PARTY_BUFFER_BONUS,		// 103
 	POINT_PARTY_SKILL_MASTER_BONUS,	// 104
@@ -234,56 +234,56 @@ enum EPointTypes
 	POINT_SP_RECOVER_CONTINUE,		// 106
 
 	POINT_STEAL_GOLD,			// 107 
-	POINT_POLYMORPH,			// 108 º¯½ÅÇÑ ¸ó½ºÅÍ ¹øÈ£
-	POINT_MOUNT,			// 109 Å¸°íÀÖ´Â ¸ó½ºÅÍ ¹øÈ£
+	POINT_POLYMORPH,			// 108 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+	POINT_MOUNT,			// 109 Å¸ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 
 	POINT_PARTY_HASTE_BONUS,		// 110
 	POINT_PARTY_DEFENDER_BONUS,		// 111
-	POINT_STAT_RESET_COUNT,		// 112 ÇÇÀÇ ´Ü¾à »ç¿ëÀ» ÅëÇÑ ½ºÅÝ ¸®¼Â Æ÷ÀÎÆ® (1´ç 1Æ÷ÀÎÆ® ¸®¼Â°¡´É)
+	POINT_STAT_RESET_COUNT,		// 112 ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® (1ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½Â°ï¿½ï¿½ï¿½)
 
 	POINT_HORSE_SKILL,			// 113
 
-	POINT_MALL_ATTBONUS,		// 114 °ø°Ý·Â +x%
-	POINT_MALL_DEFBONUS,		// 115 ¹æ¾î·Â +x%
-	POINT_MALL_EXPBONUS,		// 116 °æÇèÄ¡ +x%
-	POINT_MALL_ITEMBONUS,		// 117 ¾ÆÀÌÅÛ µå·ÓÀ² x/10¹è
-	POINT_MALL_GOLDBONUS,		// 118 µ· µå·ÓÀ² x/10¹è
+	POINT_MALL_ATTBONUS,		// 114 ï¿½ï¿½ï¿½Ý·ï¿½ +x%
+	POINT_MALL_DEFBONUS,		// 115 ï¿½ï¿½ï¿½ï¿½ +x%
+	POINT_MALL_EXPBONUS,		// 116 ï¿½ï¿½ï¿½ï¿½Ä¡ +x%
+	POINT_MALL_ITEMBONUS,		// 117 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ x/10ï¿½ï¿½
+	POINT_MALL_GOLDBONUS,		// 118 ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ x/10ï¿½ï¿½
 
-	POINT_MAX_HP_PCT,			// 119 ÃÖ´ë»ý¸í·Â +x%
-	POINT_MAX_SP_PCT,			// 120 ÃÖ´ëÁ¤½Å·Â +x%
+	POINT_MAX_HP_PCT,			// 119 ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ +x%
+	POINT_MAX_SP_PCT,			// 120 ï¿½Ö´ï¿½ï¿½ï¿½ï¿½Å·ï¿½ +x%
 
-	POINT_SKILL_DAMAGE_BONUS,		// 121 ½ºÅ³ µ¥¹ÌÁö *(100+x)%
-	POINT_NORMAL_HIT_DAMAGE_BONUS,	// 122 ÆòÅ¸ µ¥¹ÌÁö *(100+x)%
+	POINT_SKILL_DAMAGE_BONUS,		// 121 ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *(100+x)%
+	POINT_NORMAL_HIT_DAMAGE_BONUS,	// 122 ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *(100+x)%
 
 	// DEFEND_BONUS_ATTRIBUTES
-	POINT_SKILL_DEFEND_BONUS,		// 123 ½ºÅ³ ¹æ¾î µ¥¹ÌÁö
-	POINT_NORMAL_HIT_DEFEND_BONUS,	// 124 ÆòÅ¸ ¹æ¾î µ¥¹ÌÁö
+	POINT_SKILL_DEFEND_BONUS,		// 123 ï¿½ï¿½Å³ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	POINT_NORMAL_HIT_DEFEND_BONUS,	// 124 ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	// END_OF_DEFEND_BONUS_ATTRIBUTES
 
 	// PC_BANG_ITEM_ADD 
-	POINT_PC_BANG_EXP_BONUS,		// 125 PC¹æ Àü¿ë °æÇèÄ¡ º¸³Ê½º
-	POINT_PC_BANG_DROP_BONUS,		// 126 PC¹æ Àü¿ë µå·Ó·ü º¸³Ê½º
+	POINT_PC_BANG_EXP_BONUS,		// 125 PCï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½Ê½ï¿½
+	POINT_PC_BANG_DROP_BONUS,		// 126 PCï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ó·ï¿½ ï¿½ï¿½ï¿½Ê½ï¿½
 	// END_PC_BANG_ITEM_ADD
-	POINT_RAMADAN_CANDY_BONUS_EXP,			// ¶ó¸¶´Ü »çÅÁ °æÇèÄ¡ Áõ°¡¿ë
+	POINT_RAMADAN_CANDY_BONUS_EXP,			// ï¿½ó¸¶´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-	POINT_ENERGY = 128,					// 128 ±â·Â
+	POINT_ENERGY = 128,					// 128 ï¿½ï¿½ï¿½
 
-	// ±â·Â ui ¿ë.
-	// ¼­¹ö¿¡¼­ ¾²Áö ¾Ê±â¸¸, Å¬¶óÀÌ¾ðÆ®¿¡¼­ ±â·ÂÀÇ ³¡ ½Ã°£À» POINT·Î °ü¸®ÇÏ±â ¶§¹®¿¡ ÀÌ·¸°Ô ÇÑ´Ù.
-	// ¾Æ ºÎ²ô·´´Ù
-	POINT_ENERGY_END_TIME = 129,					// 129 ±â·Â Á¾·á ½Ã°£
+	// ï¿½ï¿½ï¿½ ui ï¿½ï¿½.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±â¸¸, Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ POINTï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+	// ï¿½ï¿½ ï¿½Î²ï¿½ï¿½
+	POINT_ENERGY_END_TIME = 129,					// 129 ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
 	POINT_COSTUME_ATTR_BONUS = 130,
 	POINT_MAGIC_ATT_BONUS_PER = 131,
 	POINT_MELEE_MAGIC_ATT_BONUS_PER = 132,
 
-	// Ãß°¡ ¼Ó¼º ÀúÇ×
-	POINT_RESIST_ICE = 133,          //   ³Ã±â ÀúÇ×   : ¾óÀ½°ø°Ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
-	POINT_RESIST_EARTH = 134,        //   ´ëÁö ÀúÇ×   : ¾óÀ½°ø°Ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
-	POINT_RESIST_DARK = 135,         //   ¾îµÒ ÀúÇ×   : ¾óÀ½°ø°Ý¿¡ ´ëÇÑ ´ë¹ÌÁö °¨¼Ò
+	// ï¿½ß°ï¿½ ï¿½Ó¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_ICE = 133,          //   ï¿½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_EARTH = 134,        //   ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_DARK = 135,         //   ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-	POINT_RESIST_CRITICAL = 136,		// Å©¸®Æ¼ÄÃ ÀúÇ×	: »ó´ëÀÇ Å©¸®Æ¼ÄÃ È®·üÀ» °¨¼Ò
-	POINT_RESIST_PENETRATE = 137,		// °üÅëÅ¸°Ý ÀúÇ×	: »ó´ëÀÇ °üÅëÅ¸°Ý È®·üÀ» °¨¼Ò
+	POINT_RESIST_CRITICAL = 136,		// Å©ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	: ï¿½ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½Æ¼ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	POINT_RESIST_PENETRATE = 137,		// ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½	: ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	//POINT_MAX_NUM = 129	common/length.h
 };
@@ -352,7 +352,7 @@ struct DynamicCharacterPtr {
 	uint32_t id;
 };
 
-/* ÀúÀåÇÏ´Â µ¥ÀÌÅÍ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 typedef struct character_point
 {
 	long			points[POINT_MAX_NUM];
@@ -375,7 +375,7 @@ typedef struct character_point
 	BYTE			skill_group;
 } CHARACTER_POINT;
 
-/* ÀúÀåµÇÁö ¾Ê´Â Ä³¸¯ÅÍ µ¥ÀÌÅÍ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
 typedef struct character_point_instant
 {
 	long			points[POINT_MAX_NUM];
@@ -397,7 +397,7 @@ typedef struct character_point_instant
 	LPITEM			pItems[INVENTORY_AND_EQUIP_SLOT_MAX];
 	BYTE			bItemGrid[INVENTORY_AND_EQUIP_SLOT_MAX];
 
-	// ¿ëÈ¥¼® ÀÎº¥Åä¸®.
+	// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½Îºï¿½ï¿½ä¸®.
 	LPITEM			pDSItems[DRAGON_SOUL_INVENTORY_MAX_NUM];
 	WORD			wDSItemGrid[DRAGON_SOUL_INVENTORY_MAX_NUM];
 
@@ -409,7 +409,7 @@ typedef struct character_point_instant
 
 	BYTE			gm_level;
 
-	BYTE			bBasePart;	// Æò»óº¹ ¹øÈ£
+	BYTE			bBasePart;	// ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 
 	int				iMaxStamina;
 
@@ -507,7 +507,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 {
 	protected:
 		//////////////////////////////////////////////////////////////////////////////////
-		// Entity °ü·Ã
+		// Entity ï¿½ï¿½ï¿½ï¿½
 		virtual void	EncodeInsertPacket(LPENTITY entity);
 		virtual void	EncodeRemovePacket(LPENTITY entity);
 		//////////////////////////////////////////////////////////////////////////////////
@@ -517,7 +517,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void				UpdatePacket();
 
 		//////////////////////////////////////////////////////////////////////////////////
-		// FSM (Finite State Machine) °ü·Ã
+		// FSM (Finite State Machine) ï¿½ï¿½ï¿½ï¿½
 	protected:
 		CStateTemplate<CHARACTER>	m_stateMove;
 		CStateTemplate<CHARACTER>	m_stateBattle;
@@ -587,16 +587,17 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		DWORD			GetPlayerID() const	{ return m_dwPlayerID; }
 
 		void			SetPlayerProto(const TPlayerTable * table);
-		void			CreatePlayerProto(TPlayerTable & tab);	// ÀúÀå ½Ã »ç¿ë
+		void			CreatePlayerProto(TPlayerTable & tab);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 
 		void			SetProto(const CMob * c_pkMob);
 		WORD			GetRaceNum() const;
 
 		void			Save();		// DelayedSave
-		void			SaveReal();	// ½ÇÁ¦ ÀúÀå
+		void			SaveReal();	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		void			FlushDelayedSaveItem();
 
 		const char *	GetName() const;
+		bool			ItemUseCooldown(LPITEM item);
 		const VID &		GetVID() const		{ return m_vid;		}
 
 		void			SetName(const std::string& name) { m_stName = name; }
@@ -634,7 +635,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		DWORD			GetExp() const		{ return m_points.exp;	}
 		void			SetExp(DWORD exp)	{ m_points.exp = exp;	}
 		DWORD			GetNextExp() const;
-		LPCHARACTER		DistributeExp();	// Á¦ÀÏ ¸¹ÀÌ ¶§¸° »ç¶÷À» ¸®ÅÏÇÑ´Ù.
+		LPCHARACTER		DistributeExp();	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		void			DistributeHP(LPCHARACTER pkKiller);
 		void			DistributeSP(LPCHARACTER pkKiller, int iMethod=0);
 
@@ -717,14 +718,14 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		DWORD			GetPolymorphItemVnum() const;
 		DWORD			GetMonsterDrainSPPoint() const;
 
-		void			MainCharacterPacket();	// ³»°¡ ¸ÞÀÎÄ³¸¯ÅÍ¶ó°í º¸³»ÁØ´Ù.
+		void			MainCharacterPacket();	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 
 		void			ComputePoints();
 		void			ComputeBattlePoints();
 		void			PointChange(BYTE type, int amount, bool bAmount = false, bool bBroadcast = false);
 		void			PointsPacket();
 		void			ApplyPoint(BYTE bApplyType, int iVal);
-		void			CheckMaximumPoints();	// HP, SP µîÀÇ ÇöÀç °ªÀÌ ÃÖ´ë°ª º¸´Ù ³ôÀºÁö °Ë»çÇÏ°í ³ô´Ù¸é ³·Ãá´Ù.
+		void			CheckMaximumPoints();	// HP, SP ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ë°ª ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 
 		bool			Show(long lMapIndex, long x, long y, long z = LONG_MAX, bool bShowSpawnMotion = false);
 
@@ -749,7 +750,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool			IsBlockMode(BYTE bFlag) const	{ return (m_pointsInstant.bBlockMode & bFlag)?true:false; }
 
 		bool			IsPolymorphed() const		{ return m_dwPolymorphRace>0; }
-		bool			IsPolyMaintainStat() const	{ return m_bPolyMaintainStat; } // ÀÌÀü ½ºÅÝÀ» À¯ÁöÇÏ´Â Æú¸®¸ðÇÁ.
+		bool			IsPolyMaintainStat() const	{ return m_bPolyMaintainStat; } // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 		void			SetPolymorph(DWORD dwRaceNum, bool bMaintainStat = false);
 		DWORD			GetPolymorphVnum() const	{ return m_dwPolymorphRace; }
 		int				GetPolymorphPower() const;
@@ -806,15 +807,15 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void			SetNowWalking(bool bWalkFlag);	
 		void			ResetWalking()			{ SetNowWalking(m_bWalking); }
 
-		bool			Goto(long x, long y);	// ¹Ù·Î ÀÌµ¿ ½ÃÅ°Áö ¾Ê°í ¸ñÇ¥ À§Ä¡·Î BLENDING ½ÃÅ²´Ù.
+		bool			Goto(long x, long y);	// ï¿½Ù·ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½Ä¡ï¿½ï¿½ BLENDING ï¿½ï¿½Å²ï¿½ï¿½.
 		void			Stop();
 
-		bool			CanMove() const;		// ÀÌµ¿ÇÒ ¼ö ÀÖ´Â°¡?
+		bool			CanMove() const;		// ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Â°ï¿½?
 
 		void			SyncPacket();
-		bool			Sync(long x, long y);	// ½ÇÁ¦ ÀÌ ¸Þ¼Òµå·Î ÀÌµ¿ ÇÑ´Ù (°¢ Á¾ Á¶°Ç¿¡ ÀÇÇÑ ÀÌµ¿ ºÒ°¡°¡ ¾øÀ½)
-		bool			Move(long x, long y);	// Á¶°ÇÀ» °Ë»çÇÏ°í Sync ¸Þ¼Òµå¸¦ ÅëÇØ ÀÌµ¿ ÇÑ´Ù.
-		void			OnMove(bool bIsAttack = false);	// ¿òÁ÷ÀÏ¶§ ºÒ¸°´Ù. Move() ¸Þ¼Òµå ÀÌ¿Ü¿¡¼­µµ ºÒ¸± ¼ö ÀÖ´Ù.
+		bool			Sync(long x, long y);	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Þ¼Òµï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Ñ´ï¿½ (ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+		bool			Move(long x, long y);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï°ï¿½ Sync ï¿½Þ¼Òµå¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Ñ´ï¿½.
+		void			OnMove(bool bIsAttack = false);	// ï¿½ï¿½ï¿½ï¿½ï¿½Ï¶ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½. Move() ï¿½Þ¼Òµï¿½ ï¿½Ì¿Ü¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 		DWORD			GetMotionMode() const;
 		float			GetMoveMotionSpeed() const;
 		float			GetMoveSpeed() const;
@@ -825,7 +826,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		DWORD			GetLastMoveTime() const		{ return m_dwLastMoveTime; }
 		DWORD			GetLastAttackTime() const	{ return m_dwLastAttackTime; }
 
-		void			SetLastAttacked(DWORD time);	// ¸¶Áö¸·À¸·Î °ø°Ý¹ÞÀº ½Ã°£ ¹× À§Ä¡¸¦ ÀúÀåÇÔ
+		void			SetLastAttacked(DWORD time);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		bool			SetSyncOwner(LPCHARACTER ch, bool bRemoveFromList = true);
 		bool			IsSyncOwner(LPCHARACTER ch) const;
@@ -852,7 +853,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 		float			m_fSyncTime;
 		LPCHARACTER		m_pkChrSyncOwner;
-		CHARACTER_LIST	m_kLst_pkChrSyncOwned;	// ³»°¡ SyncOwnerÀÎ ÀÚµé
+		CHARACTER_LIST	m_kLst_pkChrSyncOwned;	// ï¿½ï¿½ï¿½ï¿½ SyncOwnerï¿½ï¿½ ï¿½Úµï¿½
 
 		PIXEL_POSITION	m_posDest;
 		PIXEL_POSITION	m_posStart;
@@ -875,7 +876,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool			m_bStaminaConsume;
 		// End
 
-		// Quickslot °ü·Ã
+		// Quickslot ï¿½ï¿½ï¿½ï¿½
 	public:
 		void			SyncQuickslot(BYTE bType, BYTE bOldPos, BYTE bNewPos);
 		bool			GetQuickslot(BYTE pos, TQuickslot ** ppSlot);
@@ -904,7 +905,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void			LoadAffect(DWORD dwCount, TPacketAffectElement * pElements);
 		void			SaveAffect();
 
-		// Affect loadingÀÌ ³¡³­ »óÅÂÀÎ°¡?
+		// Affect loadingï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½?
 		bool			IsLoadedAffect() const	{ return m_bIsLoadedAffect; }		
 
 		bool			IsGoodAffect(BYTE bAffectType) const;
@@ -930,25 +931,25 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void			DenyToParty(LPCHARACTER member);
 		void			AcceptToParty(LPCHARACTER member);
 
-		/// ÀÚ½ÅÀÇ ÆÄÆ¼¿¡ ´Ù¸¥ character ¸¦ ÃÊ´ëÇÑ´Ù.
+		/// ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½Ù¸ï¿½ character ï¿½ï¿½ ï¿½Ê´ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param	pchInvitee ÃÊ´ëÇÒ ´ë»ó character. ÆÄÆ¼¿¡ Âü¿© °¡´ÉÇÑ »óÅÂÀÌ¾î¾ß ÇÑ´Ù.
+		 * @param	pchInvitee ï¿½Ê´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ character. ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
 		 *
-		 * ¾çÃø character ÀÇ »óÅÂ°¡ ÆÄÆ¼¿¡ ÃÊ´ëÇÏ°í ÃÊ´ë¹ÞÀ» ¼ö ÀÖ´Â »óÅÂ°¡ ¾Æ´Ï¶ó¸é ÃÊ´ëÇÏ´Â Ä³¸¯ÅÍ¿¡°Ô ÇØ´çÇÏ´Â Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ´Ù.
+		 * ï¿½ï¿½ï¿½ï¿½ character ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½Ê´ï¿½ï¿½Ï°ï¿½ ï¿½Ê´ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½Ê´ï¿½ï¿½Ï´ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 */
 		void			PartyInvite(LPCHARACTER pchInvitee);
 
-		/// ÃÊ´ëÇß´ø character ÀÇ ¼ö¶ôÀ» Ã³¸®ÇÑ´Ù.
+		/// ï¿½Ê´ï¿½ï¿½ß´ï¿½ character ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param	pchInvitee ÆÄÆ¼¿¡ Âü¿©ÇÒ character. ÆÄÆ¼¿¡ Âü¿©°¡´ÉÇÑ »óÅÂÀÌ¾î¾ß ÇÑ´Ù.
+		 * @param	pchInvitee ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ character. ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½Ñ´ï¿½.
 		 *
-		 * pchInvitee °¡ ÆÄÆ¼¿¡ °¡ÀÔÇÒ ¼ö ÀÖ´Â »óÈ²ÀÌ ¾Æ´Ï¶ó¸é ÇØ´çÇÏ´Â Ã¤ÆÃ ¸Þ¼¼Áö¸¦ Àü¼ÛÇÑ´Ù.
+		 * pchInvitee ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½È²ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ Ã¤ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 */
 		void			PartyInviteAccept(LPCHARACTER pchInvitee);
 
-		/// ÃÊ´ëÇß´ø character ÀÇ ÃÊ´ë °ÅºÎ¸¦ Ã³¸®ÇÑ´Ù.
+		/// ï¿½Ê´ï¿½ï¿½ß´ï¿½ character ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ÅºÎ¸ï¿½ Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param [in]	dwPID ÃÊ´ë Çß´ø character ÀÇ PID
+		 * @param [in]	dwPID ï¿½Ê´ï¿½ ï¿½ß´ï¿½ character ï¿½ï¿½ PID
 		 */
 		void			PartyInviteDeny(DWORD dwPID);
 
@@ -961,45 +962,45 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 	protected:
 
-		/// ÆÄÆ¼¿¡ °¡ÀÔÇÑ´Ù.
+		/// ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param	pkLeader °¡ÀÔÇÒ ÆÄÆ¼ÀÇ ¸®´õ
+		 * @param	pkLeader ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		 */
 		void			PartyJoin(LPCHARACTER pkLeader);
 
 		/**
-		 * ÆÄÆ¼ °¡ÀÔÀ» ÇÒ ¼ö ¾øÀ» °æ¿ìÀÇ ¿¡·¯ÄÚµå.
-		 * Error code ´Â ½Ã°£¿¡ ÀÇÁ¸ÀûÀÎ°¡¿¡ µû¶ó º¯°æ°¡´ÉÇÑ(mutable) type °ú Á¤Àû(static) type À¸·Î ³ª´¶´Ù.
-		 * Error code ÀÇ °ªÀÌ PERR_SEPARATOR º¸´Ù ³·À¸¸é º¯°æ°¡´ÉÇÑ type ÀÌ°í ³ôÀ¸¸é Á¤Àû type ÀÌ´Ù.
+		 * ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½.
+		 * Error code ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ°¡ï¿½ï¿½ï¿½ï¿½(mutable) type ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(static) type ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+		 * Error code ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ PERR_SEPARATOR ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½æ°¡ï¿½ï¿½ï¿½ï¿½ type ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ type ï¿½Ì´ï¿½.
 		 */
 		enum PartyJoinErrCode {
-			PERR_NONE		= 0,	///< Ã³¸®¼º°ø
-			PERR_SERVER,			///< ¼­¹ö¹®Á¦·Î ÆÄÆ¼°ü·Ã Ã³¸® ºÒ°¡
-			PERR_DUNGEON,			///< Ä³¸¯ÅÍ°¡ ´øÀü¿¡ ÀÖÀ½
-			PERR_OBSERVER,			///< °üÀü¸ðµåÀÓ
-			PERR_LVBOUNDARY,		///< »ó´ë Ä³¸¯ÅÍ¿Í ·¹º§Â÷ÀÌ°¡ ³²
-			PERR_LOWLEVEL,			///< »ó´ëÆÄÆ¼ÀÇ ÃÖ°í·¹º§º¸´Ù 30·¹º§ ³·À½
-			PERR_HILEVEL,			///< »ó´ëÆÄÆ¼ÀÇ ÃÖÀú·¹º§º¸´Ù 30·¹º§ ³ôÀ½
-			PERR_ALREADYJOIN,		///< ÆÄÆ¼°¡ÀÔ ´ë»ó Ä³¸¯ÅÍ°¡ ÀÌ¹Ì ÆÄÆ¼Áß
-			PERR_PARTYISFULL,		///< ÆÄÆ¼ÀÎ¿ø Á¦ÇÑ ÃÊ°ú
+			PERR_NONE		= 0,	///< Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			PERR_SERVER,			///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ò°ï¿½
+			PERR_DUNGEON,			///< Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			PERR_OBSERVER,			///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			PERR_LVBOUNDARY,		///< ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì°ï¿½ ï¿½ï¿½
+			PERR_LOWLEVEL,			///< ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½Ö°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 30ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			PERR_HILEVEL,			///< ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 30ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+			PERR_ALREADYJOIN,		///< ï¿½ï¿½Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½
+			PERR_PARTYISFULL,		///< ï¿½ï¿½Æ¼ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½
 			PERR_SEPARATOR,			///< Error type separator.
-			PERR_DIFFEMPIRE,		///< »ó´ë Ä³¸¯ÅÍ¿Í ´Ù¸¥ Á¦±¹ÀÓ
-			PERR_MAX				///< Error code ÃÖ°íÄ¡. ÀÌ ¾Õ¿¡ Error code ¸¦ Ãß°¡ÇÑ´Ù.
+			PERR_DIFFEMPIRE,		///< ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			PERR_MAX				///< Error code ï¿½Ö°ï¿½Ä¡. ï¿½ï¿½ ï¿½Õ¿ï¿½ Error code ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ñ´ï¿½.
 		};
 
-		/// ÆÄÆ¼ °¡ÀÔÀÌ³ª °á¼º °¡´ÉÇÑ Á¶°ÇÀ» °Ë»çÇÑ´Ù.
+		/// ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ ï¿½á¼º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param 	pchLeader ÆÄÆ¼ÀÇ leader ÀÌ°Å³ª ÃÊ´ëÇÑ character
-		 * @param	pchGuest ÃÊ´ë¹Þ´Â character
-		 * @return	¸ðµç PartyJoinErrCode °¡ ¹ÝÈ¯µÉ ¼ö ÀÖ´Ù.
+		 * @param 	pchLeader ï¿½ï¿½Æ¼ï¿½ï¿½ leader ï¿½Ì°Å³ï¿½ ï¿½Ê´ï¿½ï¿½ï¿½ character
+		 * @param	pchGuest ï¿½Ê´ï¿½Þ´ï¿½ character
+		 * @return	ï¿½ï¿½ï¿½ PartyJoinErrCode ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
 		 */
 		static PartyJoinErrCode	IsPartyJoinableCondition(const LPCHARACTER pchLeader, const LPCHARACTER pchGuest);
 
-		/// ÆÄÆ¼ °¡ÀÔÀÌ³ª °á¼º °¡´ÉÇÑ µ¿ÀûÀÎ Á¶°ÇÀ» °Ë»çÇÑ´Ù.
+		/// ï¿½ï¿½Æ¼ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ ï¿½á¼º ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param 	pchLeader ÆÄÆ¼ÀÇ leader ÀÌ°Å³ª ÃÊ´ëÇÑ character
-		 * @param	pchGuest ÃÊ´ë¹Þ´Â character
-		 * @return	mutable type ÀÇ code ¸¸ ¹ÝÈ¯ÇÑ´Ù.
+		 * @param 	pchLeader ï¿½ï¿½Æ¼ï¿½ï¿½ leader ï¿½Ì°Å³ï¿½ ï¿½Ê´ï¿½ï¿½ï¿½ character
+		 * @param	pchGuest ï¿½Ê´ï¿½Þ´ï¿½ character
+		 * @return	mutable type ï¿½ï¿½ code ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
 		 */
 		static PartyJoinErrCode	IsPartyJoinableMutableCondition(const LPCHARACTER pchLeader, const LPCHARACTER pchGuest);
 
@@ -1008,11 +1009,11 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		LPEVENT			m_pkPartyRequestEvent;
 
 		/**
-		 * ÆÄÆ¼ÃÊÃ» Event map.
-		 * key: ÃÊ´ë¹ÞÀº Ä³¸¯ÅÍÀÇ PID
-		 * value: eventÀÇ pointer
+		 * ï¿½ï¿½Æ¼ï¿½ï¿½Ã» Event map.
+		 * key: ï¿½Ê´ï¿½ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ PID
+		 * value: eventï¿½ï¿½ pointer
 		 *
-		 * ÃÊ´ëÇÑ Ä³¸¯ÅÍµé¿¡ ´ëÇÑ event map.
+		 * ï¿½Ê´ï¿½ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Íµé¿¡ ï¿½ï¿½ï¿½ï¿½ event map.
 		 */
 		typedef std::map< DWORD, LPEVENT >	EventMap;
 		EventMap		m_PartyInviteEventMap;
@@ -1046,7 +1047,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Item related
 	public:
-		bool			CanHandleItem(bool bSkipRefineCheck = false, bool bSkipObserver = false); // ¾ÆÀÌÅÛ °ü·Ã ÇàÀ§¸¦ ÇÒ ¼ö ÀÖ´Â°¡?
+		bool			CanHandleItem(bool bSkipRefineCheck = false, bool bSkipObserver = false); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Â°ï¿½?
 
 		bool			IsItemLoaded() const	{ return m_bItemLoaded; }
 		void			SetItemLoaded()	{ m_bItemLoaded = true; }
@@ -1061,14 +1062,14 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		LPITEM			GetWear(BYTE bCell) const;
 
 		// MYSHOP_PRICE_LIST
-		void			UseSilkBotary(void); 		/// ºñ´Ü º¸µû¸® ¾ÆÀÌÅÛÀÇ »ç¿ë
+		void			UseSilkBotary(void); 		/// ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
-		/// DB Ä³½Ã·Î ºÎÅÍ ¹Þ¾Æ¿Â °¡°ÝÁ¤º¸ ¸®½ºÆ®¸¦ À¯Àú¿¡°Ô Àü¼ÛÇÏ°í º¸µû¸® ¾ÆÀÌÅÛ »ç¿ëÀ» Ã³¸®ÇÑ´Ù.
+		/// DB Ä³ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param [in] p	°¡°ÝÁ¤º¸ ¸®½ºÆ® ÆÐÅ¶
+		 * @param [in] p	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½Å¶
 		 *
-		 * Á¢¼ÓÇÑ ÈÄ Ã³À½ ºñ´Ü º¸µû¸® ¾ÆÀÌÅÛ »ç¿ë ½Ã UseSilkBotary ¿¡¼­ DB Ä³½Ã·Î °¡°ÝÁ¤º¸ ¸®½ºÆ®¸¦ ¿äÃ»ÇÏ°í
-		 * ÀÀ´ä¹ÞÀº ½ÃÁ¡¿¡ ÀÌ ÇÔ¼ö¿¡¼­ ½ÇÁ¦ ºñ´Üº¸µû¸® »ç¿ëÀ» Ã³¸®ÇÑ´Ù.
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ UseSilkBotary ï¿½ï¿½ï¿½ï¿½ DB Ä³ï¿½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ï°ï¿½
+		 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 */
 		void			UseSilkBotaryReal(const TPacketMyshopPricelistHeader* p);
 		// END_OF_MYSHOP_PRICE_LIST
@@ -1114,10 +1115,10 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool			EquipItem(LPITEM item, int iCandidateCell = -1);
 		bool			UnequipItem(LPITEM item);
 
-		// ÇöÀç itemÀ» Âø¿ëÇÒ ¼ö ÀÖ´Â Áö È®ÀÎÇÏ°í, ºÒ°¡´É ÇÏ´Ù¸é Ä³¸¯ÅÍ¿¡°Ô ÀÌÀ¯¸¦ ¾Ë·ÁÁÖ´Â ÇÔ¼ö
+		// ï¿½ï¿½ï¿½ï¿½ itemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½Ï´Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½
 		bool			CanEquipNow(const LPITEM item, const TItemPos& srcCell = NPOS, const TItemPos& destCell = NPOS);
 
-		// Âø¿ëÁßÀÎ itemÀ» ¹þÀ» ¼ö ÀÖ´Â Áö È®ÀÎÇÏ°í, ºÒ°¡´É ÇÏ´Ù¸é Ä³¸¯ÅÍ¿¡°Ô ÀÌÀ¯¸¦ ¾Ë·ÁÁÖ´Â ÇÔ¼ö
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ itemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½Ò°ï¿½ï¿½ï¿½ ï¿½Ï´Ù¸ï¿½ Ä³ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½Ö´ï¿½ ï¿½Ô¼ï¿½
 		bool			CanUnequipNow(const LPITEM item, const TItemPos& srcCell = NPOS, const TItemPos& destCell = NPOS);
 
 		bool			SwapItem(BYTE bCell, BYTE bDestCell);
@@ -1149,14 +1150,14 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 	protected:
 
-		/// ÇÑ ¾ÆÀÌÅÛ¿¡ ´ëÇÑ °¡°ÝÁ¤º¸¸¦ Àü¼ÛÇÑ´Ù.
+		/// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		/**
-		 * @param [in]	dwItemVnum ¾ÆÀÌÅÛ vnum
-		 * @param [in]	dwItemPrice ¾ÆÀÌÅÛ °¡°Ý
+		 * @param [in]	dwItemVnum ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vnum
+		 * @param [in]	dwItemPrice ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		 */
 		void			SendMyShopPriceListCmd(DWORD dwItemVnum, DWORD dwItemPrice);
 
-		bool			m_bNoOpenedShop;	///< ÀÌ¹ø Á¢¼Ó ÈÄ °³ÀÎ»óÁ¡À» ¿¬ ÀûÀÌ ÀÖ´ÂÁöÀÇ ¿©ºÎ(¿­¾ú´ø ÀûÀÌ ¾ø´Ù¸é true)
+		bool			m_bNoOpenedShop;	///< ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ true)
 
 		bool			m_bItemLoaded;
 		int				m_iRefineAdditionalCell;
@@ -1170,7 +1171,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void			SetGold(INT gold)	{ m_points.gold = gold;	}
 		bool			DropGold(INT gold);
 		INT				GetAllowedGold() const;
-		void			GiveGold(INT iAmount);	// ÆÄÆ¼°¡ ÀÖÀ¸¸é ÆÄÆ¼ ºÐ¹è, ·Î±× µîÀÇ Ã³¸®
+		void			GiveGold(INT iAmount);	// ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ ï¿½Ð¹ï¿½, ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
 		// End of Money
 
 		////////////////////////////////////////////////////////////////////////////////////////
@@ -1236,9 +1237,9 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool				CanFight() const;
 
 		bool				CanBeginFight() const;
-		void				BeginFight(LPCHARACTER pkVictim); // pkVictimr°ú ½Î¿ì±â ½ÃÀÛÇÑ´Ù. (°­Á¦ÀûÀÓ, ½ÃÀÛÇÒ ¼ö ÀÖ³ª Ã¼Å©ÇÏ·Á¸é CanBeginFightÀ» »ç¿ë)
+		void				BeginFight(LPCHARACTER pkVictim); // pkVictimrï¿½ï¿½ ï¿½Î¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½. (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö³ï¿½ Ã¼Å©ï¿½Ï·ï¿½ï¿½ï¿½ CanBeginFightï¿½ï¿½ ï¿½ï¿½ï¿½)
 
-		bool				CounterAttack(LPCHARACTER pkChr); // ¹Ý°ÝÇÏ±â (¸ó½ºÅÍ¸¸ »ç¿ë)
+		bool				CounterAttack(LPCHARACTER pkChr); // ï¿½Ý°ï¿½ï¿½Ï±ï¿½ (ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½)
 
 		bool				IsStun() const;
 		void				Stun();
@@ -1268,7 +1269,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void				UpdateAlignment(int iAmount);
 		int					GetAlignment() const;
 
-		//¼±¾ÇÄ¡ ¾ò±â 
+		//ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ 
 		int					GetRealAlignment() const;
 		void				ShowAlignment(bool bShow);
 
@@ -1317,7 +1318,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 		DWORD				m_dwFlyTargetID;
 		std::vector<DWORD>	m_vec_dwFlyTargets;
-		TDamageMap			m_map_kDamage;	// ¾î¶² Ä³¸¯ÅÍ°¡ ³ª¿¡°Ô ¾ó¸¶¸¸Å­ÀÇ µ¥¹ÌÁö¸¦ ÁÖ¾ú´Â°¡?
+		TDamageMap			m_map_kDamage;	// ï¿½î¶² Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ó¸¶¸ï¿½Å­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½Â°ï¿½?
 //		AttackLog			m_kAttackLog;
 		DWORD				m_dwKillerPID;
 
@@ -1340,8 +1341,8 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		BYTE				GetDropMetinStonePct() const { return m_bDropMetinStonePct; }
 
 	protected:
-		LPCHARACTER			m_pkChrStone;		// ³ª¸¦ ½ºÆùÇÑ µ¹
-		CHARACTER_SET		m_set_pkChrSpawnedBy;	// ³»°¡ ½ºÆùÇÑ ³ðµé
+		LPCHARACTER			m_pkChrStone;		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		CHARACTER_SET		m_set_pkChrSpawnedBy;	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		DWORD				m_dwDropMetinStone;
 		BYTE				m_bDropMetinStonePct;
 		// End of Stone
@@ -1399,7 +1400,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 	private:
 		bool				m_bDisableCooltime;
-		DWORD				m_dwLastSkillTime;	///< ¸¶Áö¸·À¸·Î skill À» ¾´ ½Ã°£(millisecond).
+		DWORD				m_dwLastSkillTime;	///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ skill ï¿½ï¿½ ï¿½ï¿½ ï¿½Ã°ï¿½(millisecond).
 		// End of Skill
 
 		// MOB_SKILL
@@ -1456,10 +1457,10 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		// AI related
 	public:
 		void			AssignTriggers(const TMobTable * table);
-		LPCHARACTER		GetVictim() const;	// °ø°ÝÇÒ ´ë»ó ¸®ÅÏ
+		LPCHARACTER		GetVictim() const;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		void			SetVictim(LPCHARACTER pkVictim);
 		LPCHARACTER		GetNearestVictim(LPCHARACTER pkChr);
-		LPCHARACTER		GetProtege() const;	// º¸È£ÇØ¾ß ÇÒ ´ë»ó ¸®ÅÏ
+		LPCHARACTER		GetProtege() const;	// ï¿½ï¿½È£ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 		bool			Follow(LPCHARACTER pkChr, float fMinimumDistance = 150.0f);
 		bool			Return();
@@ -1483,8 +1484,8 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Target
 	protected:
-		LPCHARACTER				m_pkChrTarget;		// ³» Å¸°Ù
-		CHARACTER_SET	m_set_pkChrTargetedBy;	// ³ª¸¦ Å¸°ÙÀ¸·Î °¡Áö°í ÀÖ´Â »ç¶÷µé
+		LPCHARACTER				m_pkChrTarget;		// ï¿½ï¿½ Å¸ï¿½ï¿½
+		CHARACTER_SET	m_set_pkChrTargetedBy;	// ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	public:
 		void				SetTarget(LPCHARACTER pkChrTarget);
@@ -1505,19 +1506,19 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void				ChangeSafeboxSize(BYTE bSize);
 		void				CloseSafebox();
 
-		/// Ã¢°í ¿­±â ¿äÃ»
+		/// Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 		/**
-		 * @param [in]	pszPassword 1ÀÚ ÀÌ»ó 6ÀÚ ÀÌÇÏÀÇ Ã¢°í ºñ¹Ð¹øÈ£
+		 * @param [in]	pszPassword 1ï¿½ï¿½ ï¿½Ì»ï¿½ 6ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£
 		 *
-		 * DB ¿¡ Ã¢°í¿­±â¸¦ ¿äÃ»ÇÑ´Ù.
-		 * Ã¢°í´Â Áßº¹À¸·Î ¿­Áö ¸øÇÏ¸ç, ÃÖ±Ù Ã¢°í¸¦ ´ÝÀº ½Ã°£À¸·Î ºÎÅÍ 10ÃÊ ÀÌ³»¿¡´Â ¿­ Áö ¸øÇÑ´Ù.
+		 * DB ï¿½ï¿½ Ã¢ï¿½ï¿½ï¿½â¸¦ ï¿½ï¿½Ã»ï¿½Ñ´ï¿½.
+		 * Ã¢ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½, ï¿½Ö±ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ ï¿½Ì³ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ñ´ï¿½.
 		 */
 		void				ReqSafeboxLoad(const char* pszPassword);
 
-		/// Ã¢°í ¿­±â ¿äÃ»ÀÇ Ãë¼Ò
+		/// Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½
 		/**
-		 * ReqSafeboxLoad ¸¦ È£ÃâÇÏ°í CloseSafebox ÇÏÁö ¾Ê¾ÒÀ» ¶§ ÀÌ ÇÔ¼ö¸¦ È£ÃâÇÏ¸é Ã¢°í¸¦ ¿­ ¼ö ÀÖ´Ù.
-		 * Ã¢°í¿­±âÀÇ ¿äÃ»ÀÌ DB ¼­¹ö¿¡¼­ ½ÇÆÐÀÀ´äÀ» ¹Þ¾ÒÀ» °æ¿ì ÀÌ ÇÔ¼ö¸¦ »ç¿ëÇØ¼­ ¿äÃ»À» ÇÒ ¼ö ÀÖ°Ô ÇØÁØ´Ù.
+		 * ReqSafeboxLoad ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï°ï¿½ CloseSafebox ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
+		 * Ã¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ DB ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½Ø´ï¿½.
 		 */
 		void				CancelSafeboxLoad( void ) { m_bOpeningSafebox = false; }
 
@@ -1535,7 +1536,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		CSafebox *			m_pkSafebox;
 		int					m_iSafeboxSize;
 		int					m_iSafeboxLoadTime;
-		bool				m_bOpeningSafebox;	///< Ã¢°í°¡ ¿­±â ¿äÃ» ÁßÀÌ°Å³ª ¿­·ÁÀÖ´Â°¡ ¿©ºÎ, true ÀÏ °æ¿ì ¿­±â¿äÃ»ÀÌ°Å³ª ¿­·ÁÀÖÀ½.
+		bool				m_bOpeningSafebox;	///< Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã» ï¿½ï¿½ï¿½Ì°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½, true ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ì°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 
 		CSafebox *			m_pkMall;
 		int					m_iMallLoadTime;
@@ -1569,7 +1570,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 		void				HorseSummon(bool bSummon, bool bFromFar = false, DWORD dwVnum = 0, const char* name = 0);
 
-		LPCHARACTER			GetHorse() const			{ return m_chHorse; }	 // ÇöÀç ¼ÒÈ¯ÁßÀÎ ¸»
+		LPCHARACTER			GetHorse() const			{ return m_chHorse; }	 // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 		LPCHARACTER			GetRider() const; // rider on horse
 		void				SetRider(LPCHARACTER ch);
 
@@ -1631,7 +1632,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Resists & Proofs
 	public:
-		bool				CannotMoveByAffect() const;	// Æ¯Á¤ È¿°ú¿¡ ÀÇÇØ ¿òÁ÷ÀÏ ¼ö ¾ø´Â »óÅÂÀÎ°¡?
+		bool				CannotMoveByAffect() const;	// Æ¯ï¿½ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½?
 		bool				IsImmune(DWORD dwImmuneFlag);
 		void				SetImmuneFlag(DWORD dw) { m_pointsInstant.dwImmuneFlag = dw; }
 
@@ -1671,7 +1672,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		void				UpdateStateMachine(DWORD dwPulse);
 		void				SetNextStatePulse(int iPulseNext);
 
-		// Ä³¸¯ÅÍ ÀÎ½ºÅÏ½º ¾÷µ¥ÀÌÆ® ÇÔ¼ö. ±âÁ¸¿£ ÀÌ»óÇÑ »ó¼Ó±¸Á¶·Î CFSM::Update ÇÔ¼ö¸¦ È£ÃâÇÏ°Å³ª UpdateStateMachine ÇÔ¼ö¸¦ »ç¿ëÇß´Âµ¥, º°°³ÀÇ ¾÷µ¥ÀÌÆ® ÇÔ¼ö Ãß°¡ÇÔ.
+		// Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ô¼ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½Ó±ï¿½ï¿½ï¿½ï¿½ï¿½ CFSM::Update ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï°Å³ï¿½ UpdateStateMachine ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ß´Âµï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ô¼ï¿½ ï¿½ß°ï¿½ï¿½ï¿½.
 		void				UpdateCharacter(DWORD dwPulse);
 
 	protected:
@@ -1741,9 +1742,9 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		int				m_aiPremiumTimes[PREMIUM_MAX_NUM];
 
 		// CHANGE_ITEM_ATTRIBUTES
-		static const DWORD		msc_dwDefaultChangeItemAttrCycle;	///< µðÆúÆ® ¾ÆÀÌÅÛ ¼Ó¼ºº¯°æ °¡´É ÁÖ±â
-		static const char		msc_szLastChangeItemAttrFlag[];		///< ÃÖ±Ù ¾ÆÀÌÅÛ ¼Ó¼ºÀ» º¯°æÇÑ ½Ã°£ÀÇ Quest Flag ÀÌ¸§
-		static const char		msc_szChangeItemAttrCycleFlag[];		///< ¾ÆÀÌÅÛ ¼Ó¼ºº´°æ °¡´É ÁÖ±âÀÇ Quest Flag ÀÌ¸§
+		static const DWORD		msc_dwDefaultChangeItemAttrCycle;	///< ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
+		static const char		msc_szLastChangeItemAttrFlag[];		///< ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ Quest Flag ï¿½Ì¸ï¿½
+		static const char		msc_szChangeItemAttrCycleFlag[];		///< ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½ï¿½ï¿½ Quest Flag ï¿½Ì¸ï¿½
 		// END_OF_CHANGE_ITEM_ATTRIBUTES
 
 		// PC_BANG_ITEM_ADD
@@ -1824,7 +1825,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		int		GetMyShopTime() const	{ return m_iMyShopTime; }
 		void	SetMyShopTime() { m_iMyShopTime = thecore_pulse(); }
 
-		// Hack ¹æÁö¸¦ À§ÇÑ Ã¼Å©.
+		// Hack ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©.
 		bool	IsHack(bool bSendMsg = true, bool bCheckShopOwner = true, int limittime = g_nPortalLimitTime);
 
 		// MONARCH
@@ -1874,9 +1875,9 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool IsSiegeNPC() const;
 
 	private:
-		//Áß±¹ Àü¿ë
-		//18¼¼ ¹Ì¸¸ Àü¿ë
-		//3½Ã°£ : 50 % 5 ½Ã°£ 0%
+		//ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½
+		//18ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+		//3ï¿½Ã°ï¿½ : 50 % 5 ï¿½Ã°ï¿½ 0%
 		e_overtime m_eOverTime;
 
 	public:
@@ -1964,7 +1965,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 
 		typedef std::map <BYTE, CBuffOnAttributes*> TMapBuffOnAttrs;
 		TMapBuffOnAttrs m_map_buff_on_attrs;
-		// ¹«Àû : ¿øÈ°ÇÑ Å×½ºÆ®¸¦ À§ÇÏ¿©.
+		// ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½È°ï¿½ï¿½ ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½.
 	public:
 		void SetArmada() { cannot_dead = true; }
 		void ResetArmada() { cannot_dead = false; }
@@ -1979,7 +1980,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool IsPet() { return m_bIsPet; }
 #endif
 
-	//ÃÖÁ¾ µ¥¹ÌÁö º¸Á¤.
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	private:
 		float m_fAttMul;
 		float m_fDamMul;
@@ -1992,7 +1993,7 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 	private:
 		bool IsValidItemPosition(TItemPos Pos) const;
 
-		//µ¶ÀÏ ¼±¹° ±â´É ÆÐÅ¶ ÀÓ½Ã ÀúÀå
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Å¶ ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	private:
 		unsigned int itemAward_vnum;
 		char		 itemAward_cmd[20];
@@ -2006,10 +2007,10 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		//void		 SetItemAward_flag(bool flag) { itemAward_flag = flag; }
 
 	public:
-		//¿ëÈ¥¼®
+		//ï¿½ï¿½È¥ï¿½ï¿½
 		
-		// Ä³¸¯ÅÍÀÇ affect, quest°¡ load µÇ±â Àü¿¡ DragonSoul_Initialize¸¦ È£ÃâÇÏ¸é ¾ÈµÈ´Ù.
-		// affect°¡ °¡Àå ¸¶Áö¸·¿¡ ·ÎµåµÇ¾î LoadAffect¿¡¼­ È£ÃâÇÔ.
+		// Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ affect, questï¿½ï¿½ load ï¿½Ç±ï¿½ ï¿½ï¿½ï¿½ï¿½ DragonSoul_Initializeï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ÈµÈ´ï¿½.
+		// affectï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½Ç¾ï¿½ LoadAffectï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½.
 		void	DragonSoul_Initialize();
 
 		bool	DragonSoul_IsQualified() const;
@@ -2020,17 +2021,17 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool	DragonSoul_ActivateDeck(int deck_idx);
 
 		void	DragonSoul_DeactivateAll();
-		// ¹Ýµå½Ã ClearItem Àü¿¡ ºÒ·¯¾ß ÇÑ´Ù.
-		// ¿Ö³ÄÇÏ¸é....
-		// ¿ëÈ¥¼® ÇÏ³ª ÇÏ³ª¸¦ deactivateÇÒ ¶§¸¶´Ù µ¦¿¡ activeÀÎ ¿ëÈ¥¼®ÀÌ ÀÖ´ÂÁö È®ÀÎÇÏ°í,
-		// activeÀÎ ¿ëÈ¥¼®ÀÌ ÇÏ³ªµµ ¾ø´Ù¸é, Ä³¸¯ÅÍÀÇ ¿ëÈ¥¼® affect¿Í, È°¼º »óÅÂ¸¦ Á¦°ÅÇÑ´Ù.
+		// ï¿½Ýµï¿½ï¿½ ClearItem ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
+		// ï¿½Ö³ï¿½ï¿½Ï¸ï¿½....
+		// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½Ï³ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ deactivateï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ activeï¿½ï¿½ ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½,
+		// activeï¿½ï¿½ ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½, Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¥ï¿½ï¿½ affectï¿½ï¿½, È°ï¿½ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		// 
-		// ÇÏÁö¸¸ ClearItem ½Ã, Ä³¸¯ÅÍ°¡ Âø¿ëÇÏ°í ÀÖ´Â ¸ðµç ¾ÆÀÌÅÛÀ» unequipÇÏ´Â ¹Ù¶÷¿¡,
-		// ¿ëÈ¥¼® Affect°¡ Á¦°ÅµÇ°í, °á±¹ ·Î±×ÀÎ ½Ã, ¿ëÈ¥¼®ÀÌ È°¼ºÈ­µÇÁö ¾Ê´Â´Ù.
-		// (UnequipÇÒ ¶§¿¡´Â ·Î±×¾Æ¿ô »óÅÂÀÎÁö, ¾Æ´ÑÁö ¾Ë ¼ö ¾ø´Ù.)
-		// ¿ëÈ¥¼®¸¸ deactivate½ÃÅ°°í Ä³¸¯ÅÍÀÇ ¿ëÈ¥¼® µ¦ È°¼º »óÅÂ´Â °Çµå¸®Áö ¾Ê´Â´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ClearItem ï¿½ï¿½, Ä³ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ unequipï¿½Ï´ï¿½ ï¿½Ù¶ï¿½ï¿½ï¿½,
+		// ï¿½ï¿½È¥ï¿½ï¿½ Affectï¿½ï¿½ ï¿½ï¿½ï¿½ÅµÇ°ï¿½, ï¿½á±¹ ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
+		// (Unequipï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Æ´ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.)
+		// ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ deactivateï¿½ï¿½Å°ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½ È°ï¿½ï¿½ ï¿½ï¿½ï¿½Â´ï¿½ ï¿½Çµå¸®ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 		void	DragonSoul_CleanUp();
-		// ¿ëÈ¥¼® °­È­Ã¢
+		// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½È­Ã¢
 	public:
 		bool		DragonSoul_RefineWindow_Open(LPENTITY pEntity);
 		bool		DragonSoul_RefineWindow_Close();
@@ -2038,8 +2039,8 @@ class CHARACTER : public CEntity, public CFSM, public CHorseRider
 		bool		DragonSoul_RefineWindow_CanRefine();
 
 	private:
-		// SyncPositionÀ» ¾Ç¿ëÇÏ¿© Å¸À¯Àú¸¦ ÀÌ»óÇÑ °÷À¸·Î º¸³»´Â ÇÙ ¹æ¾îÇÏ±â À§ÇÏ¿©,
-		// SyncPositionÀÌ ÀÏ¾î³¯ ¶§¸¦ ±â·Ï.
+		// SyncPositionï¿½ï¿½ ï¿½Ç¿ï¿½ï¿½Ï¿ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½,
+		// SyncPositionï¿½ï¿½ ï¿½Ï¾î³¯ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
 		timeval		m_tvLastSyncTime;
 		int			m_iSyncHackCount;
 	public:

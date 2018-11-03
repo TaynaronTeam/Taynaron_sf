@@ -48,22 +48,22 @@ static void _send_bonus_info(LPCHARACTER ch)
 	if (item_drop_bonus)
 	{
 		ch->ChatPacket(CHAT_TYPE_NOTICE, 
-				LC_TEXT("¾ÆÀÌÅÛ µå·Ó·ü  %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù."), item_drop_bonus);
+				LC_TEXT("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ó·ï¿½  %d%% ï¿½ß°ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½Ô´Ï´ï¿½."), item_drop_bonus);
 	}
 	if (gold_drop_bonus)
 	{
 		ch->ChatPacket(CHAT_TYPE_NOTICE, 
-				LC_TEXT("°ñµå µå·Ó·ü %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù."), gold_drop_bonus);
+				LC_TEXT("ï¿½ï¿½ï¿½ ï¿½ï¿½Ó·ï¿½ %d%% ï¿½ß°ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½Ô´Ï´ï¿½."), gold_drop_bonus);
 	}
 	if (gold10_drop_bonus)
 	{
 		ch->ChatPacket(CHAT_TYPE_NOTICE, 
-				LC_TEXT("´ë¹Ú°ñµå µå·Ó·ü %d%% Ãß°¡ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù."), gold10_drop_bonus);
+				LC_TEXT("ï¿½ï¿½Ú°ï¿½ï¿½ ï¿½ï¿½Ó·ï¿½ %d%% ï¿½ß°ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½Ô´Ï´ï¿½."), gold10_drop_bonus);
 	}
 	if (exp_bonus)
 	{
 		ch->ChatPacket(CHAT_TYPE_NOTICE, 
-				LC_TEXT("°æÇèÄ¡ %d%% Ãß°¡ È¹µæ ÀÌº¥Æ® ÁßÀÔ´Ï´Ù."), exp_bonus);
+				LC_TEXT("ï¿½ï¿½ï¿½ï¿½Ä¡ %d%% ï¿½ß°ï¿½ È¹ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ï¿½ï¿½Ô´Ï´ï¿½."), exp_bonus);
 	}
 }
 
@@ -71,13 +71,13 @@ static bool FN_is_battle_zone(LPCHARACTER ch)
 {
 	switch (ch->GetMapIndex())
 	{
-		case 1:         // ½Å¼ö 1Â÷ ¸¶À»
-		case 2:         // ½Å¼ö 2Â÷ ¸¶À»
-		case 21:        // ÃµÁ¶ 1Â÷ ¸¶À»
-		case 23:        // ÃµÁ¶ 2Â÷ ¸¶À»
-		case 41:        // Áø³ë 1Â÷ ¸¶À»
-		case 43:        // Áø³ë 2Â÷ ¸¶À»
-		case 113:       // OX ¸Ê
+		case 1:         // ï¿½Å¼ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		case 2:         // ï¿½Å¼ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		case 21:        // Ãµï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		case 23:        // Ãµï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		case 41:        // ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		case 43:        // ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		case 113:       // OX ï¿½ï¿½
 			return false;
 	}
 
@@ -379,7 +379,7 @@ bool RaceToJob(unsigned race, unsigned* ret_job)
 	return true;
 }
 
-// ½Å±Ô Ä³¸¯ÅÍ Áö¿ø
+// ï¿½Å±ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 bool NewPlayerTable2(TPlayerTable * table, const char * name, BYTE race, BYTE shape, BYTE bEmpire)
 {
 	if (race >= MAIN_RACE_MAX_NUM)
@@ -403,7 +403,7 @@ bool NewPlayerTable2(TPlayerTable * table, const char * name, BYTE race, BYTE sh
 	strlcpy(table->name, name, sizeof(table->name));
 
 	table->level		= 1;
-	table->job			= race;	// Á÷¾÷´ë½Å Á¾Á·À» ³Ö´Â´Ù
+	table->job			= race;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â´ï¿½
 	table->voice		= 0;
 	table->part_base	= shape;
 
@@ -449,7 +449,7 @@ void CInputLogin::CharacterCreate(LPDESC d, const char * data)
 		return;
 	}
 
-	// »ç¿ëÇÒ ¼ö ¾ø´Â ÀÌ¸§ÀÌ°Å³ª, Àß¸øµÈ Æò»óº¹ÀÌ¸é »ý¼³ ½ÇÆÐ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½Ì°Å³ï¿½, ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	if (!check_name(pinfo->name) || pinfo->shape > 1)
 	{
 		if (LC_IsCanada() == true)
@@ -579,7 +579,7 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 
 	CGuildManager::instance().LoginMember(ch);
 
-	// Ä³¸¯ÅÍ¸¦ ¸Ê¿¡ Ãß°¡ 
+	// Ä³ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½Ê¿ï¿½ ï¿½ß°ï¿½ 
 	ch->Show(ch->GetMapIndex(), pos.x, pos.y, pos.z);
 
 	SECTREE_MANAGER::instance().SendNPCPosition(ch);
@@ -587,8 +587,8 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 
 	d->SetPhase(PHASE_GAME);
 
-	if(ch->GetItemAward_cmd())																		//°ÔÀÓÆäÀÌÁî µé¾î°¡¸é
-		quest::CQuestManager::instance().ItemInformer(ch->GetPlayerID(),ch->GetItemAward_vnum());	//questmanager È£Ãâ
+	if(ch->GetItemAward_cmd())																		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¡ï¿½ï¿½
+		quest::CQuestManager::instance().ItemInformer(ch->GetPlayerID(),ch->GetItemAward_vnum());	//questmanager È£ï¿½ï¿½
 	
 	sys_log(0, "ENTERGAME: %s %dx%dx%d %s map_index %d", 
 			ch->GetName(), ch->GetX(), ch->GetY(), ch->GetZ(), d->GetHostName(), ch->GetMapIndex());
@@ -598,13 +598,14 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 		ch->EnterHorse();
 	}
 
-	// ÇÃ·¹ÀÌ½Ã°£ ·¹ÄÚµù ½ÃÀÛ
+	// ï¿½Ã·ï¿½ï¿½Ì½Ã°ï¿½ ï¿½ï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 	ch->ResetPlayTime();
 
-	// ÀÚµ¿ ÀúÀå ÀÌº¥Æ® Ãß°¡
+	// ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ß°ï¿½
 	ch->StartSaveEvent();
 	ch->StartRecoveryEvent();
 	ch->StartCheckSpeedHackEvent();
+	ch->SetQuestFlag("item_use_cooldown", get_global_time())
 
 	CPVPManager::instance().Connect(ch);
 	CPVPManager::instance().SendList(d);
@@ -661,7 +662,7 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 				//if (0 != g_stClientVersion.compare(d->GetClientVersion()))
 				if (version > date)
 				{
-					ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("Å¬¶óÀÌ¾ðÆ® ¹öÀüÀÌ Æ²·Á ·Î±×¾Æ¿ô µË´Ï´Ù. Á¤»óÀûÀ¸·Î ÆÐÄ¡ ÈÄ Á¢¼ÓÇÏ¼¼¿ä."));
+					ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ²ï¿½ï¿½ ï¿½Î±×¾Æ¿ï¿½ ï¿½Ë´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½."));
 					d->DelayedDisconnect(10);
 					LogManager::instance().HackLog("VERSION_CONFLICT", ch);
 
@@ -757,10 +758,10 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 	}
 	else if (ch->GetMapIndex() == 113)
 	{
-		// ox ÀÌº¥Æ® ¸Ê
+		// ox ï¿½Ìºï¿½Æ® ï¿½ï¿½
 		if (COXEventManager::instance().Enter(ch) == false)
 		{
-			// ox ¸Ê ÁøÀÔ Çã°¡°¡ ³ªÁö ¾ÊÀ½. ÇÃ·¹ÀÌ¾î¸é ¸¶À»·Î º¸³»ÀÚ
+			// ox ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ã°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (ch->GetGMLevel() == GM_PLAYER)
 				ch->WarpSet(EMPIRE_START_X(ch->GetEmpire()), EMPIRE_START_Y(ch->GetEmpire()));
 		}
@@ -775,8 +776,8 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 		}
 	}
 
-	// Ã»¼Ò³â º¸È£
-	if (g_TeenDesc) // BufferedPacket »ç¿ë ±ÝÁö
+	// Ã»ï¿½Ò³ï¿½ ï¿½ï¿½È£
+	if (g_TeenDesc) // BufferedPacket ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	{
 		TPacketGTLogin p;
 
@@ -796,14 +797,14 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 			db_clientdesc->DBPacket(HEADER_GD_REQ_HORSE_NAME, 0, &pid, sizeof(DWORD));
 	}
 
-	// Áß¸³¸Ê¿¡ µé¾î°¬À»¶§ ¾È³»ÇÏ±â
+	// ï¿½ß¸ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½î°¬ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½ï¿½Ï±ï¿½
 	if (g_noticeBattleZone)
 	{
 		if (FN_is_battle_zone(ch))
 		{
-			ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("ÀÌ ¸Ê¿¡¼± °­Á¦ÀûÀÎ ´ëÀüÀÌ ÀÖÀ»¼ö µµ ÀÖ½À´Ï´Ù."));
-			ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("ÀÌ Á¶Ç×¿¡ µ¿ÀÇÇÏÁö ¾ÊÀ»½Ã"));
-			ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("º»ÀÎÀÇ ÁÖ¼º ¹× ºÎ¼ºÀ¸·Î µ¹¾Æ°¡½Ã±â ¹Ù¶ø´Ï´Ù."));
+			ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½."));
+			ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("ï¿½ï¿½ ï¿½ï¿½ï¿½×¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
+			ch->ChatPacket(CHAT_TYPE_NOTICE, LC_TEXT("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½ ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½Ã±ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½."));
 		}
 	}
 }
@@ -856,13 +857,13 @@ int CInputLogin::GuildSymbolUpload(LPDESC d, const char* c_pData, size_t uiBytes
 
 	if (iSymbolSize <= 0 || iSymbolSize > 64 * 1024)
 	{
-		// 64k º¸´Ù Å« ±æµå ½Éº¼Àº ¿Ã¸±¼ö¾ø´Ù
-		// Á¢¼ÓÀ» ²÷°í ¹«½Ã
+		// 64k ï¿½ï¿½ï¿½ï¿½ Å« ï¿½ï¿½ï¿½ ï¿½Éºï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		d->SetPhase(PHASE_CLOSE);
 		return 0;
 	}
 
-	// ¶¥À» ¼ÒÀ¯ÇÏÁö ¾ÊÀº ±æµåÀÎ °æ¿ì.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½.
 	if (!test_server)
 		if (!building::CManager::instance().FindLandByGuild(p->guild_id))
 		{
@@ -978,7 +979,7 @@ void CInputLogin::GuildMarkCRCList(LPDESC d, const char* c_pData)
 	CGuildMarkManager::instance().GetDiffBlocks(pCG->imgIdx, pCG->crclist, mapDiffBlocks);
 
 	DWORD blockCount = 0;
-	TEMP_BUFFER buf(1024 * 1024); // 1M ¹öÆÛ
+	TEMP_BUFFER buf(1024 * 1024); // 1M ï¿½ï¿½ï¿½ï¿½
 
 	for (itertype(mapDiffBlocks) it = mapDiffBlocks.begin(); it != mapDiffBlocks.end(); ++it)
 	{

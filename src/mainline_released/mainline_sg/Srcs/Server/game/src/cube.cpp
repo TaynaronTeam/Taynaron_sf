@@ -38,11 +38,11 @@ static bool s_isInitializedCubeMaterialInformation = false;
 /*--------------------------------------------------------*/
 enum ECubeResultCategory
 {
-	CUBE_CATEGORY_POTION,				// ¾àÃÊ, Áø¾× µîµî..  (Æ÷¼ÇÀ¸·Î Æ¯Á¤ÇÒ ¼ö ¾øÀ¸´Ï »ç¿ë ¾È ÇÔ. ¾àÃÊ°°Àº°Ç ´Ù °Á ±âÅ¸)
-	CUBE_CATEGORY_WEAPON,				// ¹«±â
-	CUBE_CATEGORY_ARMOR,				// ¹æ¾î±¸
-	CUBE_CATEGORY_ACCESSORY,			// Àå½Å±¸
-	CUBE_CATEGORY_ETC,				// ±âÅ¸ µîµî...
+	CUBE_CATEGORY_POTION,				// ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½..  (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½. ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Å¸)
+	CUBE_CATEGORY_WEAPON,				// ï¿½ï¿½ï¿½ï¿½
+	CUBE_CATEGORY_ARMOR,				// ï¿½ï¿½î±¸
+	CUBE_CATEGORY_ACCESSORY,			// ï¿½ï¿½Å±ï¿½
+	CUBE_CATEGORY_ETC,				// ï¿½ï¿½Å¸ ï¿½ï¿½ï¿½...
 };
 
 typedef std::vector<CUBE_VALUE>	TCubeValueVector;
@@ -54,12 +54,12 @@ struct SCubeMaterialInfo
 		bHaveComplicateMaterial = false;
 	};
 
-	CUBE_VALUE			reward;							// º¸»óÀÌ ¹¹³Ä
-	TCubeValueVector	material;						// Àç·áµéÀº ¹¹³Ä
-	DWORD				gold;							// µ·Àº ¾ó¸¶µå³Ä
-	TCubeValueVector	complicateMaterial;				// º¹ÀâÇÑ-_- Àç·áµé
+	CUBE_VALUE			reward;							// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	TCubeValueVector	material;						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	DWORD				gold;							// ï¿½ï¿½ï¿½ï¿½ ï¿½ó¸¶µï¿½ï¿½
+	TCubeValueVector	complicateMaterial;				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-_- ï¿½ï¿½ï¿½ï¿½
 
-	// .. Å¬¶óÀÌ¾ðÆ®¿¡¼­ Àç·á¸¦ º¸¿©ÁÖ±â À§ÇÏ¿© ¾à¼ÓÇÑ Æ÷¸Ë
+	// .. Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½á¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	// 72723,1&72724,2&72730,1
 	// 52001,1|52002,1|52003,1&72723,1&72724,5
 	//	=> ( 52001,1 or 52002,1 or 52003,1 ) and 72723,1 and 72724,5
@@ -76,13 +76,13 @@ struct SItemNameAndLevel
 };
 
 
-// ÀÚ·á±¸Á¶³ª ÀÌ·±°Å º´½ÅÀÎ°Ç ÀÌÇØÁ»... ´©±¸¶«¿¡ ¿µÈ¥ÀÌ ¾ø´Â »óÅÂ¿¡¼­ ¸¸µé¾ú¾¸
+// ï¿½Ú·á±¸ï¿½ï¿½ï¿½ï¿½ ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½... ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 typedef std::vector<SCubeMaterialInfo>								TCubeResultList;
-typedef boost::unordered_map<DWORD, TCubeResultList>				TCubeMapByNPC;				// °¢°¢ÀÇ NPCº°·Î ¾î¶² °É ¸¸µé ¼ö ÀÖ°í Àç·á°¡ ¹ºÁö...
-typedef boost::unordered_map<DWORD, std::string>					TCubeResultInfoTextByNPC;	// °¢°¢ÀÇ NPCº°·Î ¸¸µé ¼ö ÀÖ´Â ¸ñ·ÏÀ» Á¤ÇØÁø Æ÷¸ËÀ¸·Î Á¤¸®ÇÑ Á¤º¸
+typedef boost::unordered_map<DWORD, TCubeResultList>				TCubeMapByNPC;				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ï¿½ï¿½ ï¿½î¶² ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½á°¡ ï¿½ï¿½ï¿½ï¿½...
+typedef boost::unordered_map<DWORD, std::string>					TCubeResultInfoTextByNPC;	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 TCubeMapByNPC cube_info_map;
-TCubeResultInfoTextByNPC cube_result_info_map_by_npc;				// ³×ÀÌ¹Ö Á¸³ª º´½Å°°´Ù ¤»¤»¤»
+TCubeResultInfoTextByNPC cube_result_info_map_by_npc;				// ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 class CCubeMaterialInfoHelper
 {
@@ -93,7 +93,7 @@ public:
 /*--------------------------------------------------------*/
 /*                  STATIC FUNCTIONS                      */ 
 /*--------------------------------------------------------*/
- // ÇÊ¿äÇÑ ¾ÆÀÌÅÛ °³¼ö¸¦ °¡Áö°íÀÖ´Â°¡?
+ // ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´Â°ï¿½?
 static bool FN_check_item_count (LPITEM *items, DWORD item_vnum, int need_count)
 {
 	int	count = 0;
@@ -112,7 +112,7 @@ static bool FN_check_item_count (LPITEM *items, DWORD item_vnum, int need_count)
 	return (count>=need_count);
 }
 
-// Å¥ºê³»ÀÇ Àç·á¸¦ Áö¿î´Ù.
+// Å¥ï¿½ê³»ï¿½ï¿½ ï¿½ï¿½á¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½.
 static void FN_remove_material (LPITEM *items, DWORD item_vnum, int need_count)
 {
 	int		count	= 0;
@@ -171,7 +171,7 @@ static bool FN_check_valid_npc( WORD vnum )
 	return false;
 }
 
-// Å¥ºêµ¥ÀÌÅ¸°¡ ¿Ã¹Ù¸£°Ô ÃÊ±âÈ­ µÇ¾ú´ÂÁö Ã¼Å©ÇÑ´Ù.
+// Å¥ï¿½êµ¥ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Ã¹Ù¸ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
 static bool FN_check_cube_data (CUBE_DATA *cube_data)
 {
 	DWORD	i = 0;
@@ -205,10 +205,10 @@ CUBE_DATA::CUBE_DATA()
 	this->gold = 0;
 }
 
-// ÇÊ¿äÇÑ Àç·áÀÇ ¼ö·®À» ¸¸Á·ÇÏ´ÂÁö Ã¼Å©ÇÑ´Ù.
+// ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
 bool CUBE_DATA::can_make_item (LPITEM *items, WORD npc_vnum)
 {
-	// ÇÊ¿äÇÑ Àç·á, ¼ö·®À» ¸¸Á·ÇÏ´ÂÁö Ã¼Å©ÇÑ´Ù.
+	// ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ Ã¼Å©ï¿½Ñ´ï¿½.
 	DWORD	i, end_index;
 	DWORD	need_vnum;
 	int		need_count;
@@ -236,7 +236,7 @@ bool CUBE_DATA::can_make_item (LPITEM *items, WORD npc_vnum)
 	return true;
 }
 
-// Å¥ºê¸¦ µ¹·ÈÀ»¶§ ³ª¿À´Â ¾ÆÀÌÅÛÀÇ Á¾·ù¸¦ °áÁ¤ÇÔ
+// Å¥ï¿½ê¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 CUBE_VALUE* CUBE_DATA::reward_value ()
 {
 	int		end_index		= 0;
@@ -249,7 +249,7 @@ CUBE_VALUE* CUBE_DATA::reward_value ()
 	return &this->reward[reward_index];
 }
 
-// Å¥ºê¿¡ µé¾îÀÖ´Â Àç·á¸¦ Áö¿î´Ù
+// Å¥ï¿½ê¿¡ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½á¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½
 void CUBE_DATA::remove_material (LPCHARACTER ch)
 {
 	DWORD	i, end_index;
@@ -282,7 +282,7 @@ void Cube_clean_item (LPCHARACTER ch)
 	}
 }
 
-// Å¥ºêÃ¢ ¿­±â
+// Å¥ï¿½ï¿½Ã¢ ï¿½ï¿½ï¿½ï¿½
 void Cube_open (LPCHARACTER ch)
 {
 	if (false == s_isInitializedCubeMaterialInformation)
@@ -313,12 +313,12 @@ void Cube_open (LPCHARACTER ch)
 
 	if (ch->IsCubeOpen())
 	{
-		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ÀÌ¹Ì Á¦Á¶Ã¢ÀÌ ¿­·ÁÀÖ½À´Ï´Ù."));
+		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½Ï´ï¿½."));
 		return;
 	}
 	if ( ch->GetExchange() || ch->GetMyShop() || ch->GetShopOwner() || ch->IsOpenSafebox() || ch->IsCubeOpen() )
 	{
-		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("´Ù¸¥ °Å·¡Áß(Ã¢°í,±³È¯,»óÁ¡)¿¡´Â »ç¿ëÇÒ ¼ö ¾ø½À´Ï´Ù."));
+		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½Ù¸ï¿½ ï¿½Å·ï¿½ï¿½ï¿½(Ã¢ï¿½ï¿½,ï¿½ï¿½È¯,ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."));
 		return;
 	}
 
@@ -336,7 +336,7 @@ void Cube_open (LPCHARACTER ch)
 	ch->ChatPacket(CHAT_TYPE_COMMAND, "cube open %d", npc->GetRaceNum());
 }
 
-// Å¥ºê Äµ½½
+// Å¥ï¿½ï¿½ Äµï¿½ï¿½
 void Cube_close (LPCHARACTER ch)
 {
 	RETURN_IF_CUBE_IS_NOT_OPENED(ch);
@@ -431,7 +431,7 @@ bool Cube_load (const char *file)
 		}
 		else TOKEN("gold")
 		{
-			// Á¦Á¶¿¡ ÇÊ¿äÇÑ ±Ý¾×
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½Ý¾ï¿½
 			cube_data->gold = value1;
 		}
 		else TOKEN("end")
@@ -509,10 +509,10 @@ static bool FN_update_cube_status(LPCHARACTER ch)
 // return new item
 bool Cube_make (LPCHARACTER ch)
 {
-	// ÁÖ¾îÁø ¾ÆÀÌÅÛÀ» ÇÊ¿ä·ÎÇÏ´Â Á¶ÇÕÀ» Ã£´Â´Ù. (Å¥ºêµ¥ÀÌÅ¸·Î ÄªÇÔ)
-	// Å¥ºê µ¥ÀÌÅ¸°¡ ÀÖ´Ù¸é ¾ÆÀÌÅÛÀÇ Àç·á¸¦ Ã¼Å©ÇÑ´Ù.
-	// »õ·Î¿î ¾ÆÀÌÅÛÀ» ¸¸µç´Ù.
-	// »õ·Î¿î ¾ÆÀÌÅÛ Áö±Þ
+	// ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã£ï¿½Â´ï¿½. (Å¥ï¿½êµ¥ï¿½ï¿½Å¸ï¿½ï¿½ Äªï¿½ï¿½)
+	// Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½á¸¦ Ã¼Å©ï¿½Ñ´ï¿½.
+	// ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
+	// ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	LPCHARACTER	npc;
 	int			percent_number = 0;
@@ -522,7 +522,7 @@ bool Cube_make (LPCHARACTER ch)
 
 	if (!(ch)->IsCubeOpen())
 	{
-		(ch)->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("Á¦Á¶Ã¢ÀÌ ¿­·ÁÀÖÁö ¾Ê½À´Ï´Ù"));
+		(ch)->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½"));
 		return false;
 	}
 
@@ -537,29 +537,29 @@ bool Cube_make (LPCHARACTER ch)
 
 	if (NULL == cube_proto)
 	{
-		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("Á¦Á¶ Àç·á°¡ ºÎÁ·ÇÕ´Ï´Ù"));
+		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½á°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½"));
 		return false;
 	}
 
 	if (ch->GetGold() < cube_proto->gold)
 	{
-		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("µ·ÀÌ ºÎÁ·ÇÏ°Å³ª ¾ÆÀÌÅÛÀÌ Á¦ÀÚ¸®¿¡ ¾ø½À´Ï´Ù."));	// ÀÌ ÅØ½ºÆ®´Â ÀÌ¹Ì ³Î¸® ¾²ÀÌ´Â°Å¶ó Ãß°¡¹ø¿ª ÇÊ¿ä ¾øÀ½
+		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."));	// ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½Ì´Â°Å¶ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 		return false;
 	}
 
 	CUBE_VALUE	*reward_value = cube_proto->reward_value();
 
-	// »ç¿ëµÇ¾ú´ø Àç·á¾ÆÀÌÅÛ »èÁ¦
+	// ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	cube_proto->remove_material (ch);
 	
-	// Á¦Á¶½Ã ÇÊ¿äÇÑ °ñµå Â÷°¨
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	if (0 < cube_proto->gold)
 		ch->PointChange(POINT_GOLD, -(cube_proto->gold), false);
 
 	percent_number = number(1,100);
 	if ( percent_number<=cube_proto->percent)
 	{
-		// ¼º°ø
+		// ï¿½ï¿½ï¿½ï¿½
 		ch->ChatPacket(CHAT_TYPE_COMMAND, "cube success %d %d", reward_value->vnum, reward_value->count);
 		new_item = ch->AutoGiveItem(reward_value->vnum, reward_value->count);
 
@@ -569,8 +569,8 @@ bool Cube_make (LPCHARACTER ch)
 	}
 	else
 	{
-		// ½ÇÆÐ
-		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("Á¦Á¶¿¡ ½ÇÆÐÇÏ¿´½À´Ï´Ù."));	// 2012.11.12 »õ·Î Ãß°¡µÈ ¸Þ¼¼Áö (locale_string.txt ¿¡ Ãß°¡ÇØ¾ß ÇÔ)
+		// ï¿½ï¿½ï¿½ï¿½
+		ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."));	// 2012.11.12 ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ (locale_string.txt ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½)
 		ch->ChatPacket(CHAT_TYPE_COMMAND, "cube fail");
 		LogManager::instance().CubeLog(ch->GetPlayerID(), ch->GetX(), ch->GetY(),
 				reward_value->vnum, 0, 0, 0);
@@ -581,7 +581,7 @@ bool Cube_make (LPCHARACTER ch)
 }
 
 
-// Å¥ºê¿¡ ÀÖ´Â ¾ÆÀÌÅÛµéÀ» Ç¥½Ã
+// Å¥ï¿½ê¿¡ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
 void Cube_show_list (LPCHARACTER ch)
 {
 	LPITEM	*cube_item;
@@ -602,13 +602,13 @@ void Cube_show_list (LPCHARACTER ch)
 }
 
 
-// ÀÎº¥Åä¸®¿¡ ÀÖ´Â ¾ÆÀÌÅÛÀ» Å¥ºê¿¡ µî·Ï
+// ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¥ï¿½ê¿¡ ï¿½ï¿½ï¿½
 void Cube_add_item (LPCHARACTER ch, int cube_index, int inven_index)
 {
-	// ¾ÆÀÌÅÛÀÌ ÀÖ´Â°¡?
-	// Å¥ºê³»ÀÇ ºóÀÚ¸® Ã£±â
-	// Å¥ºê¼¼ÆÃ
-	// ¸Þ½ÃÁö Àü¼Û
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Â°ï¿½?
+	// Å¥ï¿½ê³»ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ Ã£ï¿½ï¿½
+	// Å¥ï¿½ê¼¼ï¿½ï¿½
+	// ï¿½Þ½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	LPITEM	item;
 	LPITEM	*cube_item;
 
@@ -625,7 +625,7 @@ void Cube_add_item (LPCHARACTER ch, int cube_index, int inven_index)
 
 	cube_item = ch->GetCubeItem();
 
-	// ÀÌ¹Ì ´Ù¸¥À§Ä¡¿¡ µî·ÏµÇ¾ú´ø ¾ÆÀÌÅÛÀÌ¸é ±âÁ¸ indext»èÁ¦
+	// ï¿½Ì¹ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ indextï¿½ï¿½ï¿½ï¿½
 	for (int i=0; i<CUBE_MAX_NUM; ++i)
 	{
 		if (item==cube_item[i])
@@ -641,14 +641,14 @@ void Cube_add_item (LPCHARACTER ch, int cube_index, int inven_index)
 		ch->ChatPacket(CHAT_TYPE_INFO, "cube[%d]: inventory[%d]: %s added",
 									cube_index, inven_index, item->GetName());
 
-	// ÇöÀç »óÀÚ¿¡ ¿Ã¶ó¿Â ¾ÆÀÌÅÛµé·Î ¹«¾ùÀ» ¸¸µé ¼ö ÀÖ´ÂÁö Å¬¶óÀÌ¾ðÆ®¿¡ Á¤º¸ Àü´Þ
-	// À» ÇÏ°í½Í¾úÀ¸³ª ±×³É ÇÊ¿äÇÑ °ñµå°¡ ¾ó¸¶ÀÎÁö Àü´Þ
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ã¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ ï¿½Ï°ï¿½Í¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×³ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	FN_update_cube_status(ch);
 
 	return;
 }
 
-// Å¥ºê¿¡ÀÖ´Â ¾ÆÀÌÅÛÀ» Á¦°Å
+// Å¥ï¿½ê¿¡ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 void Cube_delete_item (LPCHARACTER ch, int cube_index)
 {
 	LPITEM	item;
@@ -669,14 +669,14 @@ void Cube_delete_item (LPCHARACTER ch, int cube_index)
 		ch->ChatPacket(CHAT_TYPE_INFO, "cube[%d]: cube[%d]: %s deleted",
 				cube_index, item->GetCell(), item->GetName());
 
-	// ÇöÀç »óÀÚ¿¡ ¿Ã¶ó¿Â ¾ÆÀÌÅÛµé·Î ¹«¾ùÀ» ¸¸µé ¼ö ÀÖ´ÂÁö Å¬¶óÀÌ¾ðÆ®¿¡ Á¤º¸ Àü´Þ
-	// À» ÇÏ°í½Í¾úÀ¸³ª ±×³É ÇÊ¿äÇÑ °ñµå°¡ ¾ó¸¶ÀÎÁö Àü´Þ
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ã¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ ï¿½Ï°ï¿½Í¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×³ï¿½ ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	FN_update_cube_status(ch);
 
 	return;
 }
 
-// ¾ÆÀÌÅÛ ÀÌ¸§À» ÅëÇØ¼­ ¼ø¼ö ÀÌ¸§°ú °­È­·¹º§À» ºÐ¸®ÇÏ´Â ÇÔ¼ö (¹«½Ö°Ë+5 -> ¹«½Ö°Ë, 5)
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¸ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½ (ï¿½ï¿½ï¿½Ö°ï¿½+5 -> ï¿½ï¿½ï¿½Ö°ï¿½, 5)
 SItemNameAndLevel SplitItemNameAndLevelFromName(const std::string& name)
 {
 	int level = 0;
@@ -710,7 +710,7 @@ bool FIsLessCubeValue(const CUBE_VALUE& a, const CUBE_VALUE& b)
 
 void Cube_MakeCubeInformationText()
 {
-	// ÀÌÁ¦ Á¤¸®µÈ Å¥ºê °á°ú ¹× Àç·áµéÀÇ Á¤º¸·Î Å¬¶óÀÌ¾ðÆ®¿¡ º¸³» ÁÙ Á¤º¸·Î º¯È¯ÇÔ.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½.
 	for (TCubeMapByNPC::iterator iter = cube_info_map.begin(); cube_info_map.end() != iter; ++iter)
 	{
 		const DWORD& npcVNUM = iter->first;
@@ -722,13 +722,13 @@ void Cube_MakeCubeInformationText()
 			std::string& infoText = materialInfo.infoText;
 
 			
-			// ÀÌ³ðÀÌ ³ª»Û³ðÀÌ¾ß
+			// ï¿½Ì³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Û³ï¿½ï¿½Ì¾ï¿½
 			if (0 < materialInfo.complicateMaterial.size())
 			{
 				std::sort(materialInfo.complicateMaterial.begin(), materialInfo.complicateMaterial.end(), FIsLessCubeValue);
 				std::sort(materialInfo.material.begin(), materialInfo.material.end(), FIsLessCubeValue);
 
-				//// Áßº¹µÇ´Â Àç·áµéÀ» Áö¿ò
+				//// ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				for (TCubeValueVector::iterator iter = materialInfo.complicateMaterial.begin(); materialInfo.complicateMaterial.end() != iter; ++iter)
 				{
 					for (TCubeValueVector::iterator targetIter = materialInfo.material.begin(); materialInfo.material.end() != targetIter; ++targetIter)
@@ -740,7 +740,7 @@ void Cube_MakeCubeInformationText()
 					}
 				}
 
-				// 72723,1 or 72725,1 or ... ÀÌ·± ½ÄÀÇ ¾à¼ÓµÈ Æ÷¸ËÀ» ÁöÅ°´Â ÅØ½ºÆ®¸¦ »ý¼º
+				// 72723,1 or 72725,1 or ... ï¿½Ì·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				for (TCubeValueVector::iterator iter = materialInfo.complicateMaterial.begin(); materialInfo.complicateMaterial.end() != iter; ++iter)
 				{
 					char tempBuffer[128];
@@ -755,7 +755,7 @@ void Cube_MakeCubeInformationText()
 					infoText.push_back('&');
 			}
 
-			// Áßº¹µÇÁö ¾Ê´Â ÀÏ¹Ý Àç·áµéµµ Æ÷¸Ë »ý¼º
+			// ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½Ï¹ï¿½ ï¿½ï¿½ï¿½éµµ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			for (TCubeValueVector::iterator iter = materialInfo.material.begin(); materialInfo.material.end() != iter; ++iter)
 			{
 				char tempBuffer[128];
@@ -765,7 +765,7 @@ void Cube_MakeCubeInformationText()
 
 			infoText.erase(infoText.size() - 1);
 
-			// ¸¸µé ¶§ °ñµå°¡ ÇÊ¿äÇÏ´Ù¸é °ñµåÁ¤º¸ Ãß°¡
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½å°¡ ï¿½Ê¿ï¿½ï¿½Ï´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 			if (0 < materialInfo.gold)
 			{
 				char temp[128];
@@ -786,7 +786,7 @@ bool Cube_InformationInitialize()
 
 		const std::vector<CUBE_VALUE>& rewards = cubeData->reward;
 
-		// ÇÏµåÄÚµù ¤¸¤µ
+		// ï¿½Ïµï¿½ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
 		if (1 != rewards.size())
 		{
 			sys_err("[CubeInfo] WARNING! Does not support multiple rewards (count: %d)", rewards.size());			
@@ -814,13 +814,13 @@ bool Cube_InformationInitialize()
 		{
 			SCubeMaterialInfo& existInfo = *iter;
 
-			// ÀÌ¹Ì Áßº¹µÇ´Â º¸»óÀÌ µî·ÏµÇ¾î ÀÖ´Ù¸é ¾Æ¿¹ ´Ù¸¥ Á¶ÇÕÀ¸·Î ¸¸µå´Â °ÍÀÎÁö, 
-			// °ÅÀÇ °°Àº Á¶ÇÕÀÎµ¥ Æ¯Á¤ ºÎºÐ¸¸ Æ²¸° °ÍÀÎÁö ±¸ºÐÇÔ.
-			// ¿¹¸¦µé¸é Æ¯Á¤ ºÎºÐ¸¸ Æ²¸° ¾ÆÀÌÅÛµéÀº ¾Æ·¡Ã³·³ ÇÏ³ª·Î ¹­¾î¼­ ÇÏ³ªÀÇ °á°ú·Î º¸¿©ÁÖ±â À§ÇÔÀÓ:
-			// ¿ë½ÅÁö°Ë:
-			//		¹«½Ö°Ë+5 ~ +9 x 1
-			//		ºÓÀº Ä®ÀÚ·ç Á¶°¢ x1
-			//		³ì»ö °ËÀå½Ä Á¶°¢ x1
+			// ï¿½Ì¹ï¿½ ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½Æ¿ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, 
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½ Æ¯ï¿½ï¿½ ï¿½ÎºÐ¸ï¿½ Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Æ¯ï¿½ï¿½ ï¿½ÎºÐ¸ï¿½ Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ ï¿½Æ·ï¿½Ã³ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î¼­ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:
+			//		ï¿½ï¿½ï¿½Ö°ï¿½+5 ~ +9 x 1
+			//		ï¿½ï¿½ï¿½ï¿½ Ä®ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ x1
+			//		ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ x1
 			if (reward.vnum == existInfo.reward.vnum)
 			{
 				for (TCubeValueVector::iterator existMaterialIter = existInfo.material.begin(); existInfo.material.end() != existMaterialIter; ++existMaterialIter)
@@ -835,8 +835,8 @@ bool Cube_InformationInitialize()
 
 					if (0 < existItemInfo.level)
 					{
-						// Áö±Ý Ãß°¡ÇÏ´Â Å¥ºê °á°ú¹°ÀÇ Àç·á¿Í, ±âÁ¸¿¡ µî·ÏµÇ¾îÀÖ´ø Å¥ºê °á°ú¹°ÀÇ Àç·á Áß 
-						// Áßº¹µÇ´Â ºÎºÐÀÌ ÀÖ´ÂÁö °Ë»öÇÑ´Ù
+						// ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï´ï¿½ Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ï¿½Ö´ï¿½ Å¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ 
+						// ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ñ´ï¿½
 						for (TCubeValueVector::iterator currentMaterialIter = materialInfo.material.begin(); materialInfo.material.end() != currentMaterialIter; ++currentMaterialIter)
 						{
 							TItemTable* currentMaterialProto = ITEM_MANAGER::Instance().GetTable(currentMaterialIter->vnum);
@@ -852,7 +852,7 @@ bool Cube_InformationInitialize()
 
 								//currentMaterialIter = materialInfo.material.erase(currentMaterialIter);
 
-								// TODO: Áßº¹µÇ´Â ¾ÆÀÌÅÛ µÎ °³ ÀÌ»ó °ËÃâÇØ¾ß µÉ ¼öµµ ÀÖÀ½
+								// TODO: ï¿½ßºï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 								break;
 							}
 						} // for currentMaterialIter
@@ -872,7 +872,7 @@ bool Cube_InformationInitialize()
 	return true;
 }
 
-// Å¬¶óÀÌ¾ðÆ®¿¡¼­ ¼­¹ö·Î : ÇöÀç NPC°¡ ¸¸µé ¼ö ÀÖ´Â ¾ÆÀÌÅÛµéÀÇ Á¤º¸(¸ñ·Ï)¸¦ ¿äÃ»
+// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½Ã»
 void Cube_request_result_list(LPCHARACTER ch)
 {
 	RETURN_IF_CUBE_IS_NOT_OPENED(ch);
@@ -886,7 +886,7 @@ void Cube_request_result_list(LPCHARACTER ch)
 
 	std::string& resultText = cube_result_info_map_by_npc[npcVNUM];
 
-	// ÇØ´ç NPC°¡ ¸¸µé ¼ö ÀÖ´Â ¸ñ·ÏÀÌ Á¤¸®µÈ °Ô ¾ø´Ù¸é Ä³½Ã¸¦ »ý¼º
+	// ï¿½Ø´ï¿½ NPCï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ Ä³ï¿½Ã¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 	if (resultText.length() == 0)
 	{
 		resultText.clear();
@@ -902,10 +902,12 @@ void Cube_request_result_list(LPCHARACTER ch)
 		}
 
 		resultCount = resultList.size();
+		if (resultCount == 0)
+			return;
 
 		resultText.erase(resultText.size() - 1);
 
-		// Ã¤ÆÃ ÆÐÅ¶ÀÇ ÇÑ°è¸¦ ³Ñ¾î°¡¸é ¿¡·¯ ³²±è... ±âÈ¹ÀÚ ºÐµé ²² Á¶Á¤ÇØ´Þ¶ó°í ¿äÃ»ÇÏ°Å³ª, ³ªÁß¿¡ ´Ù¸¥ ¹æ½ÄÀ¸·Î ¹Ù²Ù°Å³ª...
+		// Ã¤ï¿½ï¿½ ï¿½ï¿½Å¶ï¿½ï¿½ ï¿½Ñ°è¸¦ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½... ï¿½ï¿½È¹ï¿½ï¿½ ï¿½Ðµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´Þ¶ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½Ï°Å³ï¿½, ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù°Å³ï¿½...
 		if (resultText.size() - 20 >= CHAT_MAX_LEN)
 		{
 			sys_err("[CubeInfo] Too long cube result list text. (NPC: %d, length: %d)", npcVNUM, resultText.size());
@@ -915,7 +917,7 @@ void Cube_request_result_list(LPCHARACTER ch)
 
 	}
 
-	// ÇöÀç NPC°¡ ¸¸µé ¼ö ÀÖ´Â ¾ÆÀÌÅÛµéÀÇ ¸ñ·ÏÀ» ¾Æ·¡ Æ÷¸ËÀ¸·Î Àü¼ÛÇÑ´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ NPCï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 	// (Server -> Client) /cube r_list npcVNUM resultCount vnum1,count1/vnum2,count2,/vnum3,count3/...
 	// (Server -> Client) /cube r_list 20383 4 123,1/125,1/128,1/130,5
 	
@@ -956,7 +958,7 @@ void Cube_request_material_info(LPCHARACTER ch, int requestStartIndex, int reque
 			break;
 	}
 
-	if (false == bCatchInfo)
+	if (!bCatchInfo || materialInfoText.size() == 0)
 	{
 		sys_err("[CubeInfo] Can't find matched material info (NPC: %d, index: %d, request count: %d)", npcVNUM, requestStartIndex, requestCount);
 		return;

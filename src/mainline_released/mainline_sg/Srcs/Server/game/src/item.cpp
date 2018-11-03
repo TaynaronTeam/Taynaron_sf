@@ -295,7 +295,7 @@ LPITEM CItem::RemoveFromCharacter()
 
 	LPCHARACTER pOwner = m_pOwner;
 
-	if (m_bEquipped)	// ÀåÂøµÇ¾ú´Â°¡?
+	if (m_bEquipped)	// ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½Â°ï¿½?
 	{
 		Unequip();
 		//pOwner->UpdatePacket();
@@ -319,7 +319,7 @@ LPITEM CItem::RemoveFromCharacter()
 			{
 				TItemPos cell(INVENTORY, m_wCell);
 
-				if (false == cell.IsDefaultInventoryPosition() && false == cell.IsBeltInventoryPosition()) // ¾Æ´Ï¸é ¼ÒÁöÇ°¿¡?
+				if (false == cell.IsDefaultInventoryPosition() && false == cell.IsBeltInventoryPosition()) // ï¿½Æ´Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½?
 					sys_err("CItem::RemoveFromCharacter: Invalid Item Position");
 				else
 				{
@@ -471,16 +471,16 @@ bool CItem::CanUsedBy(LPCHARACTER ch)
 
 int CItem::FindEquipCell(LPCHARACTER ch, int iCandidateCell)
 {
-	// ÄÚ½ºÃõ ¾ÆÀÌÅÛ(ITEM_COSTUME)Àº WearFlag ¾ø¾îµµ µÊ. (sub typeÀ¸·Î Âø¿ëÀ§Ä¡ ±¸ºÐ. ±ÍÂú°Ô ¶Ç wear flag ÁÙ ÇÊ¿ä°¡ ÀÖ³ª..)
-	// ¿ëÈ¥¼®(ITEM_DS, ITEM_SPECIAL_DS)µµ  SUB_TYPEÀ¸·Î ±¸ºÐ. ½Å±Ô ¹ÝÁö, º§Æ®´Â ITEM_TYPEÀ¸·Î ±¸ºÐ -_-
+	// ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ITEM_COSTUME)ï¿½ï¿½ WearFlag ï¿½ï¿½ï¿½îµµ ï¿½ï¿½. (sub typeï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ wear flag ï¿½ï¿½ ï¿½Ê¿ä°¡ ï¿½Ö³ï¿½..)
+	// ï¿½ï¿½È¥ï¿½ï¿½(ITEM_DS, ITEM_SPECIAL_DS)ï¿½ï¿½  SUB_TYPEï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½Å±ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½Æ®ï¿½ï¿½ ITEM_TYPEï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -_-
 	if ((0 == GetWearFlag() || ITEM_TOTEM == GetType()) && ITEM_COSTUME != GetType() && ITEM_DS != GetType() && ITEM_SPECIAL_DS != GetType() && ITEM_RING != GetType() && ITEM_BELT != GetType())
 		return -1;
 
-	// ¿ëÈ¥¼® ½½·ÔÀ» WEAR·Î Ã³¸®ÇÒ ¼ö°¡ ¾ø¾î¼­(WEAR´Â ÃÖ´ë 32°³±îÁö °¡´ÉÇÑµ¥ ¿ëÈ¥¼®À» Ãß°¡ÇÏ¸é 32°¡ ³Ñ´Â´Ù.)
-	// ÀÎº¥Åä¸®ÀÇ Æ¯Á¤ À§Ä¡((INVENTORY_MAX_NUM + WEAR_MAX_NUM)ºÎÅÍ (INVENTORY_MAX_NUM + WEAR_MAX_NUM + DRAGON_SOUL_DECK_MAX_NUM * DS_SLOT_MAX - 1)±îÁö)¸¦
-	// ¿ëÈ¥¼® ½½·ÔÀ¸·Î Á¤ÇÔ.
-	// return ÇÒ ¶§¿¡, INVENTORY_MAX_NUMÀ» »« ÀÌÀ¯´Â,
-	// º»·¡ WearCellÀÌ INVENTORY_MAX_NUM¸¦ »©°í return ÇÏ±â ¶§¹®.
+	// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ WEARï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î¼­(WEARï¿½ï¿½ ï¿½Ö´ï¿½ 32ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñµï¿½ ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Ï¸ï¿½ 32ï¿½ï¿½ ï¿½Ñ´Â´ï¿½.)
+	// ï¿½Îºï¿½ï¿½ä¸®ï¿½ï¿½ Æ¯ï¿½ï¿½ ï¿½ï¿½Ä¡((INVENTORY_MAX_NUM + WEAR_MAX_NUM)ï¿½ï¿½ï¿½ï¿½ (INVENTORY_MAX_NUM + WEAR_MAX_NUM + DRAGON_SOUL_DECK_MAX_NUM * DS_SLOT_MAX - 1)ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½
+	// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
+	// return ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, INVENTORY_MAX_NUMï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+	// ï¿½ï¿½ï¿½ï¿½ WearCellï¿½ï¿½ INVENTORY_MAX_NUMï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ return ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	if (GetType() == ITEM_DS || GetType() == ITEM_SPECIAL_DS)
 	{
 		if (iCandidateCell < 0)
@@ -541,7 +541,7 @@ int CItem::FindEquipCell(LPCHARACTER ch, int iCandidateCell)
 			return WEAR_UNIQUE1;		
 	}
 
-	// ¼öÁý Äù½ºÆ®¸¦ À§ÇÑ ¾ÆÀÌÅÛÀÌ ¹ÚÈ÷´Â°÷À¸·Î ÇÑ¹ø ¹ÚÈ÷¸é Àý´ë –E¼ö ¾ø´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Eï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 	else if (GetWearFlag() & WEARABLE_ABILITY)
 	{
 		if (!ch->GetWear(WEAR_ABILITY1))
@@ -588,12 +588,12 @@ void CItem::ModifyPoints(bool bAdd)
 {
 	int accessoryGrade;
 
-	// ¹«±â¿Í °©¿Ê¸¸ ¼ÒÄÏÀ» Àû¿ë½ÃÅ²´Ù.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½ï¿½.
 	if (false == IsAccessoryForSocket())
 	{
 		if (m_pProto->bType == ITEM_WEAPON || m_pProto->bType == ITEM_ARMOR)
 		{
-			// ¼ÒÄÏÀÌ ¼Ó¼º°­È­¿¡ »ç¿ëµÇ´Â °æ¿ì Àû¿ëÇÏÁö ¾Ê´Â´Ù (ARMOR_WRIST ARMOR_NECK ARMOR_EAR)
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½ (ARMOR_WRIST ARMOR_NECK ARMOR_EAR)
 			for (int i = 0; i < ITEM_SOCKET_MAX_NUM; ++i)
 			{
 				DWORD dwVnum;
@@ -652,12 +652,12 @@ void CItem::ModifyPoints(bool bAdd)
 			m_pOwner->ApplyPoint(m_pProto->aApplies[i].bType, bAdd ? value : -value);
 		}
 	}
-	// ÃÊ½Â´ÞÀÇ ¹ÝÁö, ÇÒ·ÎÀ© »çÅÁ, Çàº¹ÀÇ ¹ÝÁö, ¿µ¿øÇÑ »ç¶ûÀÇ Ææ´øÆ®ÀÇ °æ¿ì
-	// ±âÁ¸ÀÇ ÇÏµå ÄÚµùÀ¸·Î °­Á¦·Î ¼Ó¼ºÀ» ºÎ¿©ÇßÁö¸¸,
-	// ±× ºÎºÐÀ» Á¦°ÅÇÏ°í special item group Å×ÀÌºí¿¡¼­ ¼Ó¼ºÀ» ºÎ¿©ÇÏµµ·Ï º¯°æÇÏ¿´´Ù.
-	// ÇÏÁö¸¸ ÇÏµå ÄÚµùµÇ¾îÀÖÀ» ¶§ »ý¼ºµÈ ¾ÆÀÌÅÛÀÌ ³²¾ÆÀÖÀ» ¼öµµ ÀÖ¾î¼­ Æ¯¼öÃ³¸® ÇØ³õ´Â´Ù.
-	// ÀÌ ¾ÆÀÌÅÛµéÀÇ °æ¿ì, ¹Ø¿¡ ITEM_UNIQUEÀÏ ¶§ÀÇ Ã³¸®·Î ¼Ó¼ºÀÌ ºÎ¿©µÇ±â ¶§¹®¿¡,
-	// ¾ÆÀÌÅÛ¿¡ ¹ÚÇôÀÖ´Â attribute´Â Àû¿ëÇÏÁö ¾Ê°í ³Ñ¾î°£´Ù.
+	// ï¿½Ê½Â´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½àº¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ïµï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+	// ï¿½ï¿½ ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ special item group ï¿½ï¿½ï¿½Ìºï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½.
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ïµï¿½ ï¿½Úµï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾î¼­ Æ¯ï¿½ï¿½Ã³ï¿½ï¿½ ï¿½Ø³ï¿½ï¿½Â´ï¿½.
+	// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½Ø¿ï¿½ ITEM_UNIQUEï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½Î¿ï¿½ï¿½Ç±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ attributeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½Ñ¾î°£ï¿½ï¿½.
 	if (true == CItemVnumHelper::IsRamadanMoonRing(GetVnum()) || true == CItemVnumHelper::IsHalloweenCandy(GetVnum())
 		|| true == CItemVnumHelper::IsHappinessRing(GetVnum()) || true == CItemVnumHelper::IsLovePendant(GetVnum()))
 	{
@@ -714,7 +714,7 @@ void CItem::ModifyPoints(bool bAdd)
 
 		case ITEM_ARMOR:
 			{
-				// ÄÚ½ºÃõ body¸¦ ÀÔ°íÀÖ´Ù¸é armor´Â ¹þ´ø ÀÔ´ø »ó°ü ¾øÀÌ ºñÁÖ¾ó¿¡ ¿µÇâÀ» ÁÖ¸é ¾È µÊ.
+				// ï¿½Ú½ï¿½ï¿½ï¿½ bodyï¿½ï¿½ ï¿½Ô°ï¿½ï¿½Ö´Ù¸ï¿½ armorï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô´ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¸ï¿½ ï¿½ï¿½ ï¿½ï¿½.
 				if (0 != m_pOwner->GetWear(WEAR_COSTUME_BODY))
 					break;
 
@@ -734,33 +734,33 @@ void CItem::ModifyPoints(bool bAdd)
 			}
 			break;
 
-		// ÄÚ½ºÃõ ¾ÆÀÌÅÛ ÀÔ¾úÀ» ¶§ Ä³¸¯ÅÍ parts Á¤º¸ ¼¼ÆÃ. ±âÁ¸ ½ºÅ¸ÀÏ´ë·Î Ãß°¡ÇÔ..
+		// ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¾ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä³ï¿½ï¿½ï¿½ï¿½ parts ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½Ï´ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½..
 		case ITEM_COSTUME:
 			{
 				DWORD toSetValue = this->GetVnum();
 				EParts toSetPart = PART_MAX_NUM;
 
-				// °©¿Ê ÄÚ½ºÃõ
+				// ï¿½ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½
 				if (GetSubType() == COSTUME_BODY)
 				{
 					toSetPart = PART_MAIN;
 
 					if (false == bAdd)
 					{
-						// ÄÚ½ºÃõ °©¿ÊÀ» ¹þ¾úÀ» ¶§ ¿ø·¡ °©¿ÊÀ» ÀÔ°í ÀÖ¾ú´Ù¸é ±× °©¿ÊÀ¸·Î look ¼¼ÆÃ, ÀÔÁö ¾Ê¾Ò´Ù¸é default look
+						// ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô°ï¿½ ï¿½Ö¾ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ look ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Ò´Ù¸ï¿½ default look
 						const CItem* pArmor = m_pOwner->GetWear(WEAR_BODY);
 						toSetValue = (NULL != pArmor) ? pArmor->GetVnum() : m_pOwner->GetOriginalPart(PART_MAIN);						
 					}
 					
 				}
 
-				// Çì¾î ÄÚ½ºÃõ
+				// ï¿½ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½
 				else if (GetSubType() == COSTUME_HAIR)
 				{
 					toSetPart = PART_HAIR;
 
-					// ÄÚ½ºÃõ Çì¾î´Â shape°ªÀ» item protoÀÇ value3¿¡ ¼¼ÆÃÇÏµµ·Ï ÇÔ. Æ¯º°ÇÑ ÀÌÀ¯´Â ¾ø°í ±âÁ¸ °©¿Ê(ARMOR_BODY)ÀÇ shape°ªÀÌ ÇÁ·ÎÅäÀÇ value3¿¡ ÀÖ¾î¼­ Çì¾îµµ °°ÀÌ value3À¸·Î ÇÔ.
-					// [NOTE] °©¿ÊÀº ¾ÆÀÌÅÛ vnumÀ» º¸³»°í Çì¾î´Â shape(value3)°ªÀ» º¸³»´Â ÀÌÀ¯´Â.. ±âÁ¸ ½Ã½ºÅÛÀÌ ±×·¸°Ô µÇ¾îÀÖÀ½...
+					// ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ shapeï¿½ï¿½ï¿½ï¿½ item protoï¿½ï¿½ value3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½. Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ARMOR_BODY)ï¿½ï¿½ shapeï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ value3ï¿½ï¿½ ï¿½Ö¾î¼­ ï¿½ï¿½îµµ ï¿½ï¿½ï¿½ï¿½ value3ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+					// [NOTE] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ vnumï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ shape(value3)ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.. ï¿½ï¿½ï¿½ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½...
 					toSetValue = (true == bAdd) ? this->GetValue(3) : 0;
 				}
 
@@ -821,7 +821,7 @@ bool CItem::EquipTo(LPCHARACTER ch, BYTE bWearCell)
 		return false;
 	}
 
-	// ¿ëÈ¥¼® ½½·Ô index´Â WEAR_MAX_NUM º¸´Ù Å­.
+	// ï¿½ï¿½È¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ indexï¿½ï¿½ WEAR_MAX_NUM ï¿½ï¿½ï¿½ï¿½ Å­.
 	if (IsDragonSoul())
 	{
 		if (bWearCell < WEAR_MAX_NUM || bWearCell >= WEAR_MAX_NUM + DRAGON_SOUL_DECK_MAX_NUM * DS_SLOT_MAX)
@@ -848,7 +848,7 @@ bool CItem::EquipTo(LPCHARACTER ch, BYTE bWearCell)
 	if (GetOwner())
 		RemoveFromCharacter();
 
-	ch->SetWear(bWearCell, this); // ¿©±â¼­ ÆÐÅ¶ ³ª°¨
+	ch->SetWear(bWearCell, this); // ï¿½ï¿½ï¿½â¼­ ï¿½ï¿½Å¶ ï¿½ï¿½ï¿½ï¿½
 
 	m_pOwner = ch;
 	m_bEquipped = true;
@@ -906,7 +906,7 @@ bool CItem::Unequip()
 		return false;
 	}
 
-	//½Å±Ô ¸» ¾ÆÀÌÅÛ Á¦°Å½Ã Ã³¸®
+	//ï¿½Å±ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å½ï¿½ Ã³ï¿½ï¿½
 	if (IsRideItem())
 		ClearMountAttributeAndAffect();
 
@@ -934,10 +934,25 @@ bool CItem::Unequip()
 	m_pOwner->SetWear(GetCell() - INVENTORY_MAX_NUM, NULL);
 
 	DWORD dwImmuneFlag = 0;
+	LPITEM item = NULL;
 
 	for (int i = 0; i < WEAR_MAX_NUM; ++i)
-		if (m_pOwner->GetWear(i))
-			SET_BIT(dwImmuneFlag, m_pOwner->GetWear(i)->m_pProto->dwImmuneFlag);
+	{
+		if (item=m_pOwner->GetWear(i))
+		{
+			if (item->GetImmuneFlag() != 0)
+				SET_BIT(dwImmuneFlag, item->GetImmuneFlag());
+			if (item->GetAttributeCount() > 0)
+			{
+				if (item->HasAttr(APPLY_IMMUNE_STUN))
+					SET_BIT(dwImmuneFlag, IMMUNE_STUN);
+				if (item->HasAttr(APPLY_IMMUNE_SLOW))
+					SET_BIT(dwImmuneFlag, IMMUNE_SLOW);
+				if (item->HasAttr(APPLY_IMMUNE_FALL))
+					SET_BIT(dwImmuneFlag, IMMUNE_FALL);
+			}
+		}
+	}
 
 	m_pOwner->SetImmuneFlag(dwImmuneFlag);
 
@@ -1210,7 +1225,7 @@ void CItem::AlterToMagicItem()
 		}
 	}
 
-	// 100% È®·ü·Î ÁÁÀº ¼Ó¼º ÇÏ³ª
+	// 100% È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ ï¿½Ï³ï¿½
 	PutAttribute(aiItemMagicAttributePercentHigh);
 
 	if (number(1, 100) <= iSecondPct)
@@ -1296,8 +1311,8 @@ EVENTFUNC(unique_expire_event)
 		}
 		else
 		{
-			// °ÔÀÓ ³»¿¡ ½Ã°£Á¦ ¾ÆÀÌÅÛµéÀÌ ºü¸´ºü¸´ÇÏ°Ô »ç¶óÁöÁö ¾Ê´Â ¹ö±×°¡ ÀÖ¾î
-			// ¼öÁ¤
+			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½×°ï¿½ ï¿½Ö¾ï¿½
+			// ï¿½ï¿½ï¿½ï¿½
 			// by rtsummit
 			if (pkItem->GetSocket(ITEM_SOCKET_UNIQUE_REMAIN_TIME) - cur < 600)
 				return PASSES_PER_SEC(pkItem->GetSocket(ITEM_SOCKET_UNIQUE_REMAIN_TIME) - cur);
@@ -1307,9 +1322,9 @@ EVENTFUNC(unique_expire_event)
 	}
 }
 
-// ½Ã°£ ÈÄºÒÁ¦
-// timer¸¦ ½ÃÀÛÇÒ ¶§¿¡ ½Ã°£ Â÷°¨ÇÏ´Â °ÍÀÌ ¾Æ´Ï¶ó, 
-// timer°¡ ¹ßÈ­ÇÒ ¶§¿¡ timer°¡ µ¿ÀÛÇÑ ½Ã°£ ¸¸Å­ ½Ã°£ Â÷°¨À» ÇÑ´Ù.
+// ï¿½Ã°ï¿½ ï¿½Äºï¿½ï¿½ï¿½
+// timerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¶ï¿½, 
+// timerï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ timerï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½Å­ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 EVENTFUNC(timer_based_on_wear_expire_event)
 {
 	item_event_info* info = dynamic_cast<item_event_info*>( event->info );
@@ -1328,7 +1343,7 @@ EVENTFUNC(timer_based_on_wear_expire_event)
 		pkItem->SetTimerBasedOnWearExpireEvent(NULL);
 		pkItem->SetSocket(ITEM_SOCKET_REMAIN_SEC, 0);
 	
-		// ÀÏ´Ü timer based on wear ¿ëÈ¥¼®Àº ½Ã°£ ´Ù µÇ¾ú´Ù°í ¾ø¾ÖÁö ¾Ê´Â´Ù.
+		// ï¿½Ï´ï¿½ timer based on wear ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½Ù°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.
 		if (pkItem->IsDragonSoul())
 		{
 			DSManager::instance().DeactivateDragonSoul(pkItem);
@@ -1427,7 +1442,7 @@ void CItem::StartUniqueExpireEvent()
 	if (m_pkUniqueExpireEvent)
 		return;
 
-	//±â°£Á¦ ¾ÆÀÌÅÛÀÏ °æ¿ì ½Ã°£Á¦ ¾ÆÀÌÅÛÀº µ¿ÀÛÇÏÁö ¾Ê´Â´Ù
+	//ï¿½â°£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½
 	if (IsRealTimeItem())
 		return;
 
@@ -1450,14 +1465,14 @@ void CItem::StartUniqueExpireEvent()
 	SetUniqueExpireEvent(event_create(unique_expire_event, info, PASSES_PER_SEC(iSec)));
 }
 
-// ½Ã°£ ÈÄºÒÁ¦
-// timer_based_on_wear_expire_event ¼³¸í ÂüÁ¶
+// ï¿½Ã°ï¿½ ï¿½Äºï¿½ï¿½ï¿½
+// timer_based_on_wear_expire_event ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 void CItem::StartTimerBasedOnWearExpireEvent()
 {
 	if (m_pkTimerBasedOnWearExpireEvent)
 		return;
 
-	//±â°£Á¦ ¾ÆÀÌÅÛÀÏ °æ¿ì ½Ã°£Á¦ ¾ÆÀÌÅÛÀº µ¿ÀÛÇÏÁö ¾Ê´Â´Ù
+	//ï¿½â°£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½
 	if (IsRealTimeItem())
 		return;
 
@@ -1466,7 +1481,7 @@ void CItem::StartTimerBasedOnWearExpireEvent()
 
 	int iSec = GetSocket(0);
 	
-	// ³²Àº ½Ã°£À» ºÐ´ÜÀ§·Î ²÷±â À§ÇØ...
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½...
 	if (0 != iSec)
 	{
 		iSec %= 60;
@@ -1485,7 +1500,7 @@ void CItem::StopUniqueExpireEvent()
 	if (!m_pkUniqueExpireEvent)
 		return;
 
-	if (GetValue(2) != 0) // °ÔÀÓ½Ã°£Á¦ ÀÌ¿ÜÀÇ ¾ÆÀÌÅÛÀº UniqueExpireEvent¸¦ Áß´ÜÇÒ ¼ö ¾ø´Ù.
+	if (GetValue(2) != 0) // ï¿½ï¿½ï¿½Ó½Ã°ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ UniqueExpireEventï¿½ï¿½ ï¿½ß´ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 		return;
 
 	// HARD CODING
@@ -1522,12 +1537,12 @@ int CItem::GetSpecialGroup() const
 }
 
 //
-// ¾Ç¼¼¼­¸® ¼ÒÄÏ Ã³¸®.
+// ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½.
 //
 bool CItem::IsAccessoryForSocket()
 {
 	return (m_pProto->bType == ITEM_ARMOR && (m_pProto->bSubType == ARMOR_WRIST || m_pProto->bSubType == ARMOR_NECK || m_pProto->bSubType == ARMOR_EAR)) ||
-		(m_pProto->bType == ITEM_BELT);				// 2013³â 2¿ù »õ·Î Ãß°¡µÈ 'º§Æ®' ¾ÆÀÌÅÛÀÇ °æ¿ì ±âÈ¹ÆÀ¿¡¼­ ¾Ç¼¼¼­¸® ¼ÒÄÏ ½Ã½ºÅÛÀ» ±×´ë·Î ÀÌ¿ëÇÏÀÚ°í ÇÔ.
+		(m_pProto->bType == ITEM_BELT);				// 2013ï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ 'ï¿½ï¿½Æ®' ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½È¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×´ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½.
 }
 
 void CItem::SetAccessorySocketGrade(int iGrade) 
@@ -1552,7 +1567,7 @@ void CItem::SetAccessorySocketDownGradeTime(DWORD time)
 	SetSocket(2, time); 
 
 	if (test_server && GetOwner())
-		GetOwner()->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("%s¿¡¼­ ¼ÒÄÏ ºüÁú¶§±îÁö ³²Àº ½Ã°£ %d"), GetName(), time);
+		GetOwner()->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("%sï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ %d"), GetName(), time);
 }
 
 EVENTFUNC(accessory_socket_expire_event)
@@ -1672,7 +1687,7 @@ void CItem::ClearMountAttributeAndAffect()
 }
 
 // fixme
-// ÀÌ°Å Áö±ÝÀº ¾È¾´µ¥... ±Ùµ¥ È¤½Ã³ª ½Í¾î¼­ ³²°ÜµÒ.
+// ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¾ï¿½ï¿½ï¿½... ï¿½Ùµï¿½ È¤ï¿½Ã³ï¿½ ï¿½Í¾î¼­ ï¿½ï¿½ï¿½Üµï¿½.
 // by rtsummit
 bool CItem::IsNewMountItem()
 {
@@ -1700,7 +1715,7 @@ void CItem::AccessorySocketDegrade()
 
 		if (ch)
 		{
-			ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("%s¿¡ ¹ÚÇôÀÖ´ø º¸¼®ÀÌ »ç¶óÁý´Ï´Ù."), GetName());
+			ch->ChatPacket(CHAT_TYPE_INFO, LC_TEXT("%sï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½."), GetName());
 		}
 
 		ModifyPoints(false);
@@ -1719,7 +1734,7 @@ void CItem::AccessorySocketDegrade()
 	}
 }
 
-// ring¿¡ itemÀ» ¹ÚÀ» ¼ö ÀÖ´ÂÁö ¿©ºÎ¸¦ Ã¼Å©ÇØ¼­ ¸®ÅÏ
+// ringï¿½ï¿½ itemï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ Ã¼Å©ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½
 static const bool CanPutIntoRing(LPITEM ring, LPITEM item)
 {
 	const DWORD vnum = item->GetVnum();
@@ -1940,10 +1955,10 @@ int CItem::GetLevelLimit()
 
 bool CItem::OnAfterCreatedItem()
 {
-	// ¾ÆÀÌÅÛÀ» ÇÑ ¹øÀÌ¶óµµ »ç¿ëÇß´Ù¸é, ±× ÀÌÈÄ¿£ »ç¿ë ÁßÀÌÁö ¾Ê¾Æµµ ½Ã°£ÀÌ Â÷°¨µÇ´Â ¹æ½Ä
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ß´Ù¸ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¾Æµï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½
 	if (-1 != this->GetProto()->cLimitRealTimeFirstUseIndex)
 	{
-		// Socket1¿¡ ¾ÆÀÌÅÛÀÇ »ç¿ë È½¼ö°¡ ±â·ÏµÇ¾î ÀÖÀ¸´Ï, ÇÑ ¹øÀÌ¶óµµ »ç¿ëÇÑ ¾ÆÀÌÅÛÀº Å¸ÀÌ¸Ó¸¦ ½ÃÀÛÇÑ´Ù.
+		// Socket1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½Ì¸Ó¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 		if (0 != GetSocket(1))
 		{
 			StartRealTimeExpireEvent();
@@ -1956,8 +1971,8 @@ bool CItem::OnAfterCreatedItem()
 
 #ifdef __AUCTION__
 
-// °æ¸ÅÀå
-// window¸¦ °æ¸ÅÀåÀ¸·Î ÇÑ´Ù.
+// ï¿½ï¿½ï¿½ï¿½ï¿½
+// windowï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 
 bool CItem::MoveToAuction()
 {
@@ -2024,7 +2039,7 @@ int CItem::GiveMoreTime_Per(float fPercent)
 			return given_time;
 		}
 	}
-	// ¿ì¼± ¿ëÈ¥¼®¿¡ °üÇØ¼­¸¸ ÇÏµµ·Ï ÇÑ´Ù.
+	// ï¿½ì¼± ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	else
 		return 0;
 }
@@ -2048,7 +2063,7 @@ int CItem::GiveMoreTime_Fix(DWORD dwTime)
 			return dwTime;
 		}
 	}
-	// ¿ì¼± ¿ëÈ¥¼®¿¡ °üÇØ¼­¸¸ ÇÏµµ·Ï ÇÑ´Ù.
+	// ï¿½ì¼± ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ ï¿½Ïµï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
 	else
 		return 0;
 }
@@ -2073,7 +2088,7 @@ int	CItem::GetDuration()
 
 bool CItem::IsSameSpecialGroup(const LPITEM item) const
 {
-	// ¼­·Î VNUMÀÌ °°´Ù¸é °°Àº ±×·ìÀÎ °ÍÀ¸·Î °£ÁÖ
+	// ï¿½ï¿½ï¿½ï¿½ VNUMï¿½ï¿½ ï¿½ï¿½ï¿½Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	if (this->GetVnum() == item->GetVnum())
 		return true;
 
