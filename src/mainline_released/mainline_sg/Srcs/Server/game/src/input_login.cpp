@@ -605,7 +605,7 @@ void CInputLogin::Entergame(LPDESC d, const char * data)
 	ch->StartSaveEvent();
 	ch->StartRecoveryEvent();
 	ch->StartCheckSpeedHackEvent();
-	ch->SetQuestFlag("item_use_cooldown", get_global_time());
+	ch->SetQuestFlag("item_use_cooldown", get_global_time())
 
 	CPVPManager::instance().Connect(ch);
 	CPVPManager::instance().SendList(d);
