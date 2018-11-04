@@ -21,6 +21,7 @@
 #include "pcbang.h"
 #include "skill.h"
 #include "threeway_war.h"
+extern bool global_chat;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -68,7 +69,7 @@ int CInputP2P::Relay(LPDESC d, const char * c_pData, size_t uiBytes)
 	{
 		if (pkChr->IsBlockMode(BLOCK_WHISPER))
 		{
-			// ±Ó¼Ó¸» °ÅºÎ »óÅÂ¿¡¼­ ±Ó¼Ó¸» °ÅºÎ.
+			// ï¿½Ó¼Ó¸ï¿½ ï¿½Åºï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ó¼Ó¸ï¿½ ï¿½Åºï¿½.
 			return p->lSize;
 		}
 
@@ -76,12 +77,12 @@ int CInputP2P::Relay(LPDESC d, const char * c_pData, size_t uiBytes)
 		memcpy(buf, c_pbData, MIN(p->lSize, sizeof(buf)));
 
 		TPacketGCWhisper* p2 = (TPacketGCWhisper*) buf;
-		// bType »óÀ§ 4ºñÆ®: Empire ¹øÈ£
-		// bType ÇÏÀ§ 4ºñÆ®: EWhisperType
+		// bType ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½Æ®: Empire ï¿½ï¿½È£
+		// bType ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½Æ®: EWhisperType
 		BYTE bToEmpire = (p2->bType >> 4);
 		p2->bType = p2->bType & 0x0F;
 		if(p2->bType == 0x0F) {
-			// ½Ã½ºÅÛ ¸Þ¼¼Áö ±Ó¼Ó¸»Àº bTypeÀÇ »óÀ§ºñÆ®±îÁö ¸ðµÎ »ç¿ëÇÔ.
+			// ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½Ó¼Ó¸ï¿½ï¿½ï¿½ bTypeï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 			p2->bType = WHISPER_TYPE_SYSTEM;
 		} else {
 			if (!pkChr->IsEquipUniqueGroup(UNIQUE_GROUP_RING_OF_LANGUAGE))
@@ -217,8 +218,14 @@ struct FuncShout
 
 	void operator () (LPDESC d)
 	{
-		if (!d->GetCharacter() || (d->GetCharacter()->GetGMLevel() == GM_PLAYER && d->GetEmpire() != m_bEmpire))
-			return;
+		if(global_chat)
+        {
+            if (!d->GetCharacter())
+                return;
+        }else {
+            if (!d->GetCharacter() || (d->GetCharacter()->GetGMLevel() == GM_PLAYER && d->GetEmpire() != m_bEmpire))
+                return;
+        }
 
 		d->GetCharacter()->ChatPacket(CHAT_TYPE_SHOUT, "%s", m_str);
 	}
@@ -339,7 +346,7 @@ void CInputP2P::XmasWarpSanta(const char * c_pData)
 		else
 			iNextSpawnDelay = 50 * 60;
 
-		xmas::SpawnSanta(p->lMapIndex, iNextSpawnDelay); // 50ºÐÀÖ´Ù°¡ »õ·Î¿î »êÅ¸°¡ ³ªÅ¸³² (ÇÑ±¹Àº 20ºÐ)
+		xmas::SpawnSanta(p->lMapIndex, iNextSpawnDelay); // 50ï¿½ï¿½ï¿½Ö´Ù°ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ (ï¿½Ñ±ï¿½ï¿½ï¿½ 20ï¿½ï¿½)
 
 		TPacketGGXmasWarpSantaReply pack_reply;
 		pack_reply.bHeader = HEADER_GG_XMAS_WARP_SANTA_REPLY;

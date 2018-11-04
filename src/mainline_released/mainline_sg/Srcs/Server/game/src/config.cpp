@@ -128,6 +128,7 @@ int			HackShield_CheckCycleTime = passes_per_sec * 180;
 bool		bXTrapEnabled = false;
 
 int gPlayerMaxLevel = 99;
+bool global_chat = false;
 
 bool g_BlockCharCreation = false;
 
@@ -1106,6 +1107,18 @@ void config_init(const string& st_localeServiceName)
 
 			fprintf(stderr, "PLAYER_MAX_LEVEL: %d\n", gPlayerMaxLevel);
 		}
+		TOKEN("global_chat")
+        {
+            int flag = 0;
+
+            str_to_number(flag, value_string);
+
+            if (1 == flag)
+            {
+                global_chat = true;
+                fprintf(stderr, "GLOBAL_CHAT: %in", flag);
+            }
+        }
 
 		TOKEN("block_char_creation")
 		{

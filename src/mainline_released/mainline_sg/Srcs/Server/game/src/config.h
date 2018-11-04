@@ -35,7 +35,7 @@ extern bool	china_event_server;
 extern bool	g_bNoMoreClient;
 extern bool	g_bNoRegen;
 
-extern bool	g_bTrafficProfileOn;		///< true ÀÌ¸é TrafficProfiler ¸¦ ÄÒ´Ù.
+extern bool	g_bTrafficProfileOn;		///< true ï¿½Ì¸ï¿½ TrafficProfiler ï¿½ï¿½ ï¿½Ò´ï¿½.
 
 extern BYTE	g_bChannel;
 
@@ -102,8 +102,8 @@ extern int VIEW_RANGE;
 extern int VIEW_BONUS_RANGE;
 
 extern bool g_bCheckMultiHack;
-extern bool g_protectNormalPlayer;      // ¹ü¹ýÀÚ°¡ "ÆòÈ­¸ðµå" ÀÎ ÀÏ¹ÝÀ¯Àú¸¦ °ø°ÝÇÏÁö ¸øÇÔ
-extern bool g_noticeBattleZone;         // Áß¸³Áö´ë¿¡ ÀÔÀåÇÏ¸é ¾È³»¸Þ¼¼Áö¸¦ ¾Ë·ÁÁÜ
+extern bool g_protectNormalPlayer;      // ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ "ï¿½ï¿½È­ï¿½ï¿½ï¿½" ï¿½ï¿½ ï¿½Ï¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+extern bool g_noticeBattleZone;         // ï¿½ß¸ï¿½ï¿½ï¿½ï¿½ë¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½È³ï¿½ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë·ï¿½ï¿½ï¿½
 
 extern DWORD g_GoldDropTimeLimitValue;
 
@@ -113,6 +113,7 @@ extern int  HackShield_CheckCycleTime;
 extern bool bXTrapEnabled;
 
 extern int gPlayerMaxLevel;
+extern bool global_chat;
 
 extern bool g_BlockCharCreation;
 

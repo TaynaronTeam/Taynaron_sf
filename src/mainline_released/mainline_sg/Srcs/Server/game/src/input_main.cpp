@@ -740,19 +740,44 @@ int CInputMain::Chat(LPCHARACTER ch, const char * data, size_t uiBytes)
 			return (iExtraLen);
 
 		ch->SetLastShoutPulse(thecore_heart->pulse);
+		if(global_chat)
+        {
+            char buf[256];
+            char chatbuf_global[CHAT_MAX_LEN + 1];
+            const BYTE char_empire = ch->GetEmpire();
+            if(char_empire == 1)
+            {
+                strlcpy(buf, LC_TEXT("Shinsoo"), sizeof(buf));
+                std::string kingdom_red = "|cFFff0000|H|h[";
+                kingdom_red += buf;
+                kingdom_red += "]|cFFA7FFD4|H|h";
+                sprintf(chatbuf_global, "%s %s", kingdom_red.c_str(), chatbuf);
+            } else if (char_empire == 2) {
+                strlcpy(buf, LC_TEXT("Chunjo"), sizeof(buf));
+                std::string kingdom_yel = "|cFFFFFF00|H|h[";
+                kingdom_yel += buf;
+                kingdom_yel += "]|cFFA7FFD4|H|h";
+                sprintf(chatbuf_global, "%s %s", kingdom_yel.c_str(), chatbuf);
+            } else if (char_empire == 3) {
+                strlcpy(buf, LC_TEXT("Jinno"), sizeof(buf));
+                std::string kingdom_blue = "|cFF0080FF|H|h[";
+                kingdom_blue += buf;
+                kingdom_blue += "]|cFFA7FFD4|H|h";
+                sprintf(chatbuf_global, "%s %s", kingdom_blue.c_str(), chatbuf);
+            }
 
-		TPacketGGShout p;
+            TPacketGGShout p;
 
-		p.bHeader = HEADER_GG_SHOUT;
-		p.bEmpire = ch->GetEmpire();
-		strlcpy(p.szText, chatbuf, sizeof(p.szText));
+            p.bHeader = HEADER_GG_SHOUT;
+            p.bEmpire = char_empire;
+            strlcpy(p.szText, chatbuf_global, sizeof(p.szText));
 
-		P2P_MANAGER::instance().Send(&p, sizeof(TPacketGGShout));
+            P2P_MANAGER::instance().Send(&p, sizeof(TPacketGGShout));
 
-		SendShout(chatbuf, ch->GetEmpire());
+            SendShout(chatbuf_global, ch->GetEmpire());
 
-		return (iExtraLen);
-	}
+            return (iExtraLen);
+	}}
 
 	TPacketGCChat pack_chat;
 
