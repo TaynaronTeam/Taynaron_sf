@@ -1690,8 +1690,8 @@ bool CHARACTER::ItemUseCooldown(LPITEM item)
 			return false;
 		}
 	return true;
+	}
 }
-
 bool CHARACTER::UseItemEx(LPITEM item, TItemPos DestCell)
 {
 	int iLimitRealtimeStartFirstUseFlagIndex = -1;
