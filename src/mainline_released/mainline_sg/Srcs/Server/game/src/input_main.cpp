@@ -767,7 +767,7 @@ int CInputMain::Chat(LPCHARACTER ch, const char * data, size_t uiBytes)
             }
 				else if (ch->IsGM()) {
                 strlcpy(buf, LC_TEXT("TEAM TAYNARON"), sizeof(buf));
-                std::string stuff_global = "|cFF050005|H|h[";
+                std::string stuff_global = "|cFFF50000|H|h[";
                 stuff_global += buf;
                 stuff_global += "]|cFFA7FFD4|H|h";
                 sprintf(chatbuf_global, "%s %s", stuff_global.c_str(), chatbuf);
