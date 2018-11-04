@@ -7576,7 +7576,7 @@ bool CHARACTER::CanUnequipNow(const LPITEM item, const TItemPos& srcCell, const 
 			pos = GetEmptyInventory(item->GetSize());
 
 		VERIFY_MSG( -1 == pos, "����ǰ�� �� ������ �����ϴ�." );
-	}chuj
+	}
 
 
 	return true;
