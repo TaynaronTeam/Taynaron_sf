@@ -1,8 +1,9 @@
 #ifndef __INC_SERVICE_H__
 #define __INC_SERVICE_H__
 
-#define _IMPROVED_PACKET_ENCRYPTION_ // ÆÐÅ¶ ¾ÏÈ£È­ °³¼±
+#define _IMPROVED_PACKET_ENCRYPTION_ // ï¿½ï¿½Å¶ ï¿½ï¿½È£È­ ï¿½ï¿½ï¿½ï¿½
 //#define __AUCTION__
 #define __PET_SYSTEM__
 #define __UDP_BLOCK__
+#define ENABLE_GLOBAL_CHAT // GLOBAL CHAT ACTIVE
 #endif
