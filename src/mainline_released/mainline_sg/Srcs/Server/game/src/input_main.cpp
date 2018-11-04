@@ -745,25 +745,32 @@ int CInputMain::Chat(LPCHARACTER ch, const char * data, size_t uiBytes)
             char buf[256];
             char chatbuf_global[CHAT_MAX_LEN + 1];
             const BYTE char_empire = ch->GetEmpire();
-            if(char_empire == 1)
+            if(char_empire == 1 && !ch->IsGM())
             {
                 strlcpy(buf, LC_TEXT("Shinsoo"), sizeof(buf));
                 std::string kingdom_red = "|cFFff0000|H|h[";
                 kingdom_red += buf;
                 kingdom_red += "]|cFFA7FFD4|H|h";
                 sprintf(chatbuf_global, "%s %s", kingdom_red.c_str(), chatbuf);
-            } else if (char_empire == 2) {
+            } else if (char_empire == 2 && !ch->IsGM()) {
                 strlcpy(buf, LC_TEXT("Chunjo"), sizeof(buf));
                 std::string kingdom_yel = "|cFFFFFF00|H|h[";
                 kingdom_yel += buf;
                 kingdom_yel += "]|cFFA7FFD4|H|h";
                 sprintf(chatbuf_global, "%s %s", kingdom_yel.c_str(), chatbuf);
-            } else if (char_empire == 3) {
+            } else if (char_empire == 3 && !ch->IsGM()) {
                 strlcpy(buf, LC_TEXT("Jinno"), sizeof(buf));
                 std::string kingdom_blue = "|cFF0080FF|H|h[";
                 kingdom_blue += buf;
                 kingdom_blue += "]|cFFA7FFD4|H|h";
                 sprintf(chatbuf_global, "%s %s", kingdom_blue.c_str(), chatbuf);
+            }
+				else if (ch->IsGM()) {
+                strlcpy(buf, LC_TEXT("TEAM TAYNARON"), sizeof(buf));
+                std::string stuff_global = "|cFF050005|H|h[";
+                stuff_global += buf;
+                stuff_global += "]|cFFA7FFD4|H|h";
+                sprintf(chatbuf_global, "%s %s", stuff_global.c_str(), chatbuf);
             }
 
             TPacketGGShout p;
