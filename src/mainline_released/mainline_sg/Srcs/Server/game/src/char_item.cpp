@@ -6036,7 +6036,7 @@ bool CHARACTER::SwapItem(BYTE bCell, BYTE bDestCell)
 		// �������� �������� ���� �� �ְ�, ���� ���� �������� ���� ������ ���¿��߸� ����
 		if (false == CanEquipNow(item1))
 			return false;
-		if item2->IsDragonSoul() && false == CanUnequipNow(item1))
+		if (item2->IsDragonSoul() && false == CanUnequipNow(item1))
 			return false;
 
 		if (bEquipCell != item1->FindEquipCell(this)) // ���� ��ġ�϶��� ���
